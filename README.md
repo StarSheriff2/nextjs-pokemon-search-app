@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Bannano code challenge! The goal of this challenge is to create a list of cards using the Pokemon API, with a focus on modern technology and good development practices.
+Welcome to the Bannano frontend code challenge! The goal of this challenge is to create a list of cards using the Pokemon API, with a focus on modern technology and good development practices.
 
 ## Technologies
 
