@@ -4,6 +4,11 @@
 
 Welcome to the Bannano frontend code challenge! The goal of this challenge is to create a list of cards using the Pokemon API, with a focus on modern technology and good development practices.
 
+## Figma
+https://www.figma.com/file/O58fFAAwSZKfoVOIDm8aQR/Bannano-MVP?node-id=2278%3A17645
+
+<img width="846" alt="image" src="https://user-images.githubusercontent.com/5679878/218526688-6ae75184-166b-4fe6-8bae-b27ab8fdf872.png">
+
 ## Technologies
 
 The following technologies will be used in this challenge:
@@ -59,6 +64,7 @@ Given a data API located here: [Pokemon API](https://pokeapi.co/docs/v2#pokemon)
 - https://pokeapi.co/api/v2/pokemon/{id-or-name}/ for searching the pokemon
 - https://img.pokemondb.net/artwork/large/{name}.jpg for get the image
 - https://bulbapedia.bulbagarden.net/wiki/{name} link to wiki
+
 
 ## Conclusion
 
