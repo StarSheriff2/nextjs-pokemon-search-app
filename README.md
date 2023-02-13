@@ -9,7 +9,7 @@ Welcome to the Bannano code challenge! The goal of this challenge is to create a
 The following technologies will be used in this challenge:
 
 - React Query
-- Stitches.dev for UI system
+- [Stitches.dev](https://stiches.dev) for the styling
 - Next.js
 - TypeScript
 - Zustand for state management
