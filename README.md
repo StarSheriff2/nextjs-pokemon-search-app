@@ -42,7 +42,6 @@ Please follow the component-driven development and atomic design patterns as clo
 In order to ensure the quality of the code, please make sure to:
 
 - Write clear and well-documented code
-- Follow the project's existing code style and naming conventions
 - Write tests to cover the functionality of your code
 - Optimize the performance of the code
 
