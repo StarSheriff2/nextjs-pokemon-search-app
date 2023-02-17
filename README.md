@@ -14,7 +14,7 @@ https://www.figma.com/file/O58fFAAwSZKfoVOIDm8aQR/Bannano-MVP?node-id=2278%3A176
 The following technologies will be used in this challenge:
 
 - React Query
-- [Stitches.dev](https://stiches.dev) for the styling
+- [Stitches.dev](https://stitches.dev/) for the styling
 - Next.js
 - TypeScript
 - Zustand for state management
