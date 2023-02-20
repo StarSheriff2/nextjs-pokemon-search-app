@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@stitches/react": "^1.2.8",
     "@tanstack/react-query": "^4.24.9",
     "@tanstack/react-query-devtools": "^4.24.9",
     "@types/node": "18.14.0",

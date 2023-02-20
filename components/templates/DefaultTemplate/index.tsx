@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Head from 'next/head';
+import Header from '@/components/UI/molecules/Header';
 
 interface Props {
   cars?: [];
@@ -13,7 +14,7 @@ const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
         <title>Pokemon List</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>This is header</h1>
+      <Header />
       <main>{children}</main>
       <h1>This is footer</h1>
     </div>
