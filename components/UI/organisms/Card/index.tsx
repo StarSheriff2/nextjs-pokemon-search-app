@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import CardBody from '../../molecules/CardBody';
+import CardImage from '../../molecules/CardImage';
 
 interface Props {
   // imgSrc: string;
@@ -29,7 +30,7 @@ const Card: FC<Props> = ({
 }): JSX.Element => {
   return (
     <div>
-      <div>
+      <CardImage>
         <Image
           src="https://img.pokemondb.net/artwork/large/pikachu.jpg"
           alt={imgAlt}
@@ -37,7 +38,7 @@ const Card: FC<Props> = ({
           height={24}
           priority
         />
-      </div>
+      </CardImage>
       <CardBody />
     </div>
   );
