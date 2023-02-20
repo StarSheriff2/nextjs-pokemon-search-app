@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import useFetchPokemon from './hooks/usePokemon';
 import { BeatLoader } from 'react-spinners';
+import Card from '@/components/UI/organisms/Card';
 
-const Pokemon: FC = (props): JSX.Element => {
+const Pokemon: FC = (): JSX.Element => {
   const {
     data: pokemon,
     isLoading: pokemonIsLoading,
@@ -17,6 +18,9 @@ const Pokemon: FC = (props): JSX.Element => {
   return (
     <div>
       <h1>Pokemon List</h1>
+      <div>
+        <Card imgAlt="Pikachu" />
+      </div>
     </div>
   );
 };
