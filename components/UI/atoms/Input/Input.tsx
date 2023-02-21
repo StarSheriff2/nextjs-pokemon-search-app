@@ -20,6 +20,11 @@ const StyledInput = styled('input', {
   order: 0,
   alignSelf: 'stretch',
   flexGrow: 0,
+  fontWeight: 600,
+  fontFamily: 'Quicksand',
+  letterSpacing: '-0.02em',
+  color: '#8a9da8',
+  fontSize: '1rem',
 });
 
 const Input: FC<Props> = ({ type, value, placeholder, onChange }) => (

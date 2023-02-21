@@ -7,7 +7,7 @@ import { Quicksand } from '@next/font/google';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const quicksand = Quicksand({
-  weight: ['400', '700'],
+  weight: ['400', '600', '700'],
   style: 'normal',
 });
 
