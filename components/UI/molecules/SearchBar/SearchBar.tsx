@@ -23,6 +23,8 @@ const StyledSearchBar = styled('div', {
 });
 
 const StyledUl = styled('ul', {
+  maxHeight: '390px',
+  overflow: 'scroll',
   '& li': {
     borderBottom: '#004368 solid 2px',
     borderRight: '#004368 solid 2px',
@@ -57,7 +59,6 @@ const SearchBar: FC<Props> = ({
         <Button onClick={() => {}} text="Search" search />
       </StyledSearchBar>
       <div>
-        Results
         <StyledUl>
           {searchResult.map((result) => {
             return <li key={result}>{result}</li>;
