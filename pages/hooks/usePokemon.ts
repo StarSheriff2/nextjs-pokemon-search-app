@@ -1,10 +1,16 @@
 import useStore from '@/store/useStore';
+import findPokemonSuggestions from '@/utils/findPokemonSuggestions';
 import { useQuery } from '@tanstack/react-query';
 import api from '../api/pokemon';
-import Pokemon from './types';
+import PokemonList, { PokemonData } from './types';
 
 const fetchPokemon = async () => {
-  const { data } = await api.get<Pokemon>('/pokemon?limit=10');
+  const { data } = await api.get<PokemonList>('/pokemon?limit=10');
+  return data;
+};
+
+const searchPokemon = async (query: string) => {
+  const { data } = await api.get<PokemonData>(`/pokemon/${query}/`);
   return data;
 };
 
@@ -13,6 +19,22 @@ const useFetchPokemon = () => {
   return useQuery(['pokemon'], fetchPokemon, {
     onSuccess: (data) => setData(data),
   });
+};
+
+export const useSearchPokemon = (query: string) => {
+  return useQuery(['searchPokemon', query], () => searchPokemon(query), {
+    enabled: query.length > 0,
+  });
+};
+
+export const useFindPokemonSuggestions = (slug: string) => {
+  return useQuery(
+    ['findPokemonSuggestions', slug],
+    () => findPokemonSuggestions(slug),
+    {
+      enabled: slug.length > 0,
+    }
+  );
 };
 
 export default useFetchPokemon;

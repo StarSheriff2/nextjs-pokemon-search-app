@@ -11,7 +11,7 @@ interface Props {
   type: string;
   value: string;
   placeholder: string;
-  onChange: () => void;
+  onChange: (value: string) => void;
 }
 
 const StyledInput = styled('input', {
@@ -43,7 +43,7 @@ const Input: FC<Props> = ({ type, value, placeholder, onChange }) => (
     type={type}
     value={value}
     placeholder={placeholder}
-    onChange={onChange}
+    onChange={({ target: { value } }) => onChange(value)}
   />
 );
 
