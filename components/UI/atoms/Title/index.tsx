@@ -1,11 +1,3 @@
-import { FC } from 'react';
-
-interface Props {
-  children: React.ReactNode;
-}
-
-const Title: FC<Props> = ({ children }) => {
-  return <h2>{children}</h2>;
-};
+import Title from './Title';
 
 export default Title;
