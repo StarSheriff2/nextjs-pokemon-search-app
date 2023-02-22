@@ -44,7 +44,7 @@ const SearchBar: FC<Props> = ({
       ref={resultsContainer}
       role="button"
       onClick={() => {
-        setShowSearchResults((prev) => !prev);
+        setShowSearchResults(true);
       }}
       onKeyDown={() => {}}
       tabIndex={0}
