@@ -14,31 +14,11 @@ const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
   const [searchValue, setSearchValue] = useState('');
   const debounedSearchValue = useDebounce(searchValue, 300);
 
-  const {
-    data: pokemon,
-    isFetching: pokemonIsFetching,
-    // isLoading: pokemonIsLoading,
-    // isError: pokemonIsError,
-    isSuccess: pokemonIsSuccess,
-  } = useFindPokemonSuggestions(debounedSearchValue);
+  const { data: pokemon } = useFindPokemonSuggestions(debounedSearchValue);
 
   const handleSetSearchValue = (value: string) => {
     setSearchValue(value);
   };
-
-  // const renderResult = () => {
-  //   if (pokemonIsFetching) {
-  //     return <div>Loading...</div>;
-  //   }
-  //   if (pokemonIsError) {
-  //     return <div>not found</div>;
-  //   }
-  //   if (pokemonIsSuccess) {
-  //     console.log({ pokemon });
-  //     return <div>success</div>;
-  //   }
-  //   return <></>;
-  // };
 
   return (
     <div>

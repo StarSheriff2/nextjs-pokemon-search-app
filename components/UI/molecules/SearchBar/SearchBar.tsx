@@ -1,9 +1,10 @@
-import { FC } from 'react';
+import { FC, useRef, useState } from 'react';
 import Input from '../../atoms/Input';
 import Image from 'next/image';
 import { styled } from '@stitches/react';
 import Button from '../../atoms/Button';
 import SearchResults from '../../atoms/SearchResults';
+import useOnClickOutside from '@/pages/hooks/useOnClickOutSide';
 
 interface Props {
   searchText: string;
@@ -34,8 +35,20 @@ const SearchBar: FC<Props> = ({
   setSearchText,
   searchResults,
 }): JSX.Element => {
+  const [showSearchResults, setShowSearchResults] = useState(true);
+  const resultsContainer = useRef<HTMLDivElement>(null);
+  useOnClickOutside(resultsContainer, () => setShowSearchResults(false));
+
   return (
-    <StyledSearchBarWrapper>
+    <StyledSearchBarWrapper
+      ref={resultsContainer}
+      role="button"
+      onClick={() => {
+        setShowSearchResults((prev) => !prev);
+      }}
+      onKeyDown={() => {}}
+      tabIndex={0}
+    >
       <div>
         <Image
           src="/svgs/searchIcon.svg"
@@ -52,7 +65,10 @@ const SearchBar: FC<Props> = ({
         />
         <Button onClick={() => {}} text="Search" search />
       </div>
-      <SearchResults searchResults={searchResults} />
+      <SearchResults
+        searchResults={searchResults}
+        showSearchResults={showSearchResults}
+      />
     </StyledSearchBarWrapper>
   );
 };
