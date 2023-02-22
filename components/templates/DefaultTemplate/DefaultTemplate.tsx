@@ -4,6 +4,7 @@ import Header from '@/components/UI/molecules/Header';
 import SearchBar from '@/components/UI/molecules/SearchBar';
 import useDebounce from '@/pages/hooks/useDebounce';
 import { useFindPokemonSuggestions } from '@/pages/hooks/usePokemon';
+import ContainerW1024 from '@/components/UI/atoms/ContainerW1024';
 
 interface Props {
   children?: React.ReactNode;
@@ -46,13 +47,14 @@ const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <SearchBar
-        setSearchText={handleSetSearchValue}
-        searchText={searchValue}
-        searchResult={pokemon ?? []}
-      />
-      <main>{children}</main>
-      <h1>This is footer</h1>
+      <ContainerW1024>
+        <SearchBar
+          setSearchText={handleSetSearchValue}
+          searchText={searchValue}
+          searchResults={pokemon ?? []}
+        />
+        <main>{children}</main>
+      </ContainerW1024>
     </div>
   );
 };

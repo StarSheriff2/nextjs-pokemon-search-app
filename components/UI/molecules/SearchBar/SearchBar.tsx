@@ -3,46 +3,40 @@ import Input from '../../atoms/Input';
 import Image from 'next/image';
 import { styled } from '@stitches/react';
 import Button from '../../atoms/Button';
+import SearchResults from '../../atoms/SearchResults';
 
 interface Props {
   searchText: string;
   setSearchText: (value: string) => void;
-  searchResult: string[];
+  searchResults: string[];
 }
 
-const StyledSearchBar = styled('div', {
+const StyledSearchBarWrapper = styled('div', {
   marginTop: 'calc(213px - 92px)',
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  paddingLeft: '1rem',
-  gap: '12px',
+  position: 'relative',
   maxWidth: '629px',
   borderRadius: '8px',
+  background: '#ffffff',
   border: 'red solid 2px',
-});
-
-const StyledUl = styled('ul', {
-  maxHeight: '390px',
-  overflow: 'scroll',
-  '& li': {
-    borderBottom: '#004368 solid 2px',
-    borderRight: '#004368 solid 2px',
-    borderLeft: '#004368 solid 2px',
-    padding: '0.25rem',
-    width: '50%',
-    marginLeft: '3rem',
+  '& div': {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: '1rem',
+    gap: '12px',
+    width: '100%',
+    borderRadius: '8px',
   },
 });
 
 const SearchBar: FC<Props> = ({
   searchText,
   setSearchText,
-  searchResult,
+  searchResults,
 }): JSX.Element => {
   return (
-    <>
-      <StyledSearchBar>
+    <StyledSearchBarWrapper>
+      <div>
         <Image
           src="/svgs/searchIcon.svg"
           alt="Search icon"
@@ -57,15 +51,9 @@ const SearchBar: FC<Props> = ({
           value={searchText}
         />
         <Button onClick={() => {}} text="Search" search />
-      </StyledSearchBar>
-      <div>
-        <StyledUl>
-          {searchResult.map((result) => {
-            return <li key={result}>{result}</li>;
-          })}
-        </StyledUl>
       </div>
-    </>
+      <SearchResults searchResults={searchResults} />
+    </StyledSearchBarWrapper>
   );
 };
 
