@@ -24,6 +24,12 @@ const StyledImageWrapper = styled('div', {
   background: 'red',
 });
 
+const StyledPokemonInfo = styled('ul', {
+  '& li': {
+    padding: '0.1rem',
+  },
+});
+
 const PokemonDetailsPage: FC<Props> = ({ pokemon }): JSX.Element => {
   return (
     <DefaultTemplate>
@@ -39,6 +45,24 @@ const PokemonDetailsPage: FC<Props> = ({ pokemon }): JSX.Element => {
             }}
           />
         </StyledImageWrapper>
+        <StyledPokemonInfo>
+          <li>
+            <strong>Name:</strong>{' '}
+            {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
+          </li>
+          <li>
+            <strong>Stats:</strong>{' '}
+            {pokemon.stats.map((stat) => `${stat.stat.name}, `)}
+          </li>
+          <li>
+            <strong>Abilities:</strong>{' '}
+            {pokemon.abilities.map((ability) => `${ability.ability.name}, `)}
+          </li>
+          <li>
+            <strong>Some Moves:</strong>{' '}
+            {pokemon.moves.slice(0, 5).map((move) => `${move.move.name}, `)}
+          </li>
+        </StyledPokemonInfo>
       </StyledDetailsCard>
     </DefaultTemplate>
   );

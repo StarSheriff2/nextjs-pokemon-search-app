@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
+import React, { CSSProperties, FC } from 'react';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
-import DefaultTemplate from '@/components/templates/DefaultTemplate';
-import useFetchPokemon, { useSearchPokemon } from '@/pages/hooks/usePokemon';
+import { searchPokemon, useSearchPokemon } from '@/pages/hooks/usePokemon';
 import PokemonDetailsPage from '@/components/pages/PokemonDetails';
-import { BeatLoader } from 'react-spinners';
-// import PokemonCard from '../../components/PokemonCard';
+import { dehydrate, QueryClient } from '@tanstack/react-query';
+import ContainerW1024 from '@/components/UI/atoms/ContainerW1024';
+import MyBeatLoader from '@/components/UI/molecules/BeatLoader';
 
 const PokemonDetails: FC = (): JSX.Element => {
   const router = useRouter();
@@ -14,22 +15,24 @@ const PokemonDetails: FC = (): JSX.Element => {
   const {
     isSuccess: pokemonIsSuccess,
     data: pokemonDetails,
-    isLoading: pokemonIsLoading,
+    isInitialLoading,
+    isLoading,
+    isFetching,
+    isRefetching,
     isError: pokemonIsError,
   } = useSearchPokemon(pokemonName);
 
-  if (pokemonIsSuccess) {
-    console.log({ pokemonDetails });
-    return <PokemonDetailsPage pokemon={pokemonDetails} />;
-  }
-
-  if (pokemonIsLoading) {
-    return <BeatLoader color="#fff" />;
+  if (isInitialLoading || isLoading || isFetching || isRefetching) {
+    return (
+      <ContainerW1024 page="spinner">
+        <MyBeatLoader loading={pokemonIsSuccess} />
+      </ContainerW1024>
+    );
   }
 
   if (pokemonIsError) {
     return (
-      <div className="center">
+      <div>
         We couldn't find your pokemon{' '}
         <span role="img" aria-label="sad">
           😢
@@ -38,7 +41,33 @@ const PokemonDetails: FC = (): JSX.Element => {
     );
   }
 
+  if (pokemonIsSuccess) {
+    return <PokemonDetailsPage pokemon={pokemonDetails} />;
+  }
+
   return <></>;
 };
 
 export default PokemonDetails;
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const name = context.params?.name as string;
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery(['searchPokemon', name], () =>
+    searchPokemon(name)
+  );
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
+};

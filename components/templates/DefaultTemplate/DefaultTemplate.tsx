@@ -23,7 +23,7 @@ const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
   return (
     <div>
       <Head>
-        <title>Pokemon List</title>
+        <title>Pokemon</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

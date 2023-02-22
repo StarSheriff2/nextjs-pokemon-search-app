@@ -9,7 +9,7 @@ const fetchPokemon = async () => {
   return data;
 };
 
-const searchPokemon = async (query: string) => {
+export const searchPokemon = async (query: string) => {
   const { data } = await api.get<PokemonData>(`/pokemon/${query}/`);
   return data;
 };
@@ -24,6 +24,7 @@ const useFetchPokemon = () => {
 export const useSearchPokemon = (query: string) => {
   return useQuery(['searchPokemon', query], () => searchPokemon(query), {
     enabled: query.length > 0,
+    staleTime: Infinity,
   });
 };
 

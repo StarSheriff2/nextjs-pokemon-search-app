@@ -3,12 +3,24 @@ import useFetchPokemon from './hooks/usePokemon';
 import { BeatLoader } from 'react-spinners';
 // import Card from '@/components/UI/organisms/Card';
 import HomePage from '@/components/pages/HomePage';
+import ContainerW1024 from '@/components/UI/atoms/ContainerW1024';
+import MyBeatLoader from '@/components/UI/molecules/BeatLoader';
 
 const IndexPage: FC = (): JSX.Element => {
-  const { isLoading: pokemonIsLoading } = useFetchPokemon();
+  const {
+    isLoading: pokemonIsLoading,
+    isInitialLoading,
+    isFetching,
+    isRefetching,
+    isSuccess: pokemonIsSuccess,
+  } = useFetchPokemon();
 
-  if (pokemonIsLoading) {
-    return <BeatLoader color="#fff" />;
+  if (isInitialLoading || pokemonIsLoading || isFetching || isRefetching) {
+    return (
+      <ContainerW1024 page="spinner">
+        <MyBeatLoader loading={pokemonIsSuccess} />
+      </ContainerW1024>
+    );
   }
 
   return (

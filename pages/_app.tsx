@@ -1,5 +1,5 @@
 import '@/styles/globals.css';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider, Hydrate } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { Quicksand } from '@next/font/google';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -16,13 +16,15 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <style jsx global>{`
-        html {
-          font-family: ${quicksand.style.fontFamily};
-        }
-      `}</style>
-      <Component {...pageProps} />
-      <ReactQueryDevtools initialIsOpen={false} />
+      <Hydrate state={pageProps.dehydratedState}>
+        <style jsx global>{`
+          html {
+            font-family: ${quicksand.style.fontFamily};
+          }
+        `}</style>
+        <Component {...pageProps} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </Hydrate>
     </QueryClientProvider>
   );
 }
