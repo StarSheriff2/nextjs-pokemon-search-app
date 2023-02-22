@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import DefaultTemplate from '@/components/templates/DefaultTemplate';
 import { PokemonData } from '@/pages/hooks/types';
 import PokemonCardDetails from '@/components/UI/molecules/PokemonCardDetails';
+import DetailsTemplate from '@/components/templates/DetailsTemplate';
 
 interface Props {
   pokemon: PokemonData;
@@ -9,9 +9,9 @@ interface Props {
 
 const PokemonDetailsPage: FC<Props> = ({ pokemon }): JSX.Element => {
   return (
-    <DefaultTemplate>
+    <DetailsTemplate backPath="/" backPathText="&lt; Back">
       <PokemonCardDetails pokemon={pokemon} />
-    </DefaultTemplate>
+    </DetailsTemplate>
   );
 };
 

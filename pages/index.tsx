@@ -23,15 +23,7 @@ const IndexPage: FC = (): JSX.Element => {
     );
   }
 
-  return (
-    <HomePage />
-    // <div>
-    //   <h1>Pokemon List</h1>
-    //   <div>
-    //     <Card imgAlt="Pikachu" />
-    //   </div>
-    // </div>
-  );
+  return <HomePage />;
 };
 
 export default IndexPage;
