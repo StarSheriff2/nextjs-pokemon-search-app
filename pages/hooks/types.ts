@@ -1,3 +1,5 @@
+// https://pokeapi.co/api/v2/pokemon?limit=151 to get all the pokemon with a limit
+
 export interface Result {
   name: string;
   url: string;
@@ -9,6 +11,8 @@ export interface PokemonList {
   previous?: string;
   results: Result[];
 }
+
+// Search Pokemon: https://pokeapi.co/api/v2/pokemon/{id-or-name}/
 
 export interface Ability2 {
   name: string;

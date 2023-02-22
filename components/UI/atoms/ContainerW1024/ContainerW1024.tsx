@@ -10,6 +10,9 @@ const StyledContainer = styled('div', {
   maxWidth: '1024px',
   margin: '0 auto',
   minHeight: 'calc(100vh - 92px - 213px)',
+  '& main': {
+    padding: '3.5rem 0',
+  },
 });
 
 const ContainerW1024: FC<Props> = ({ children }): JSX.Element => {

@@ -1,21 +1,16 @@
 import React, { FC } from 'react';
 import useFetchPokemon from './hooks/usePokemon';
 import { BeatLoader } from 'react-spinners';
-import Card from '@/components/UI/organisms/Card';
+// import Card from '@/components/UI/organisms/Card';
 import HomePage from '@/components/pages/HomePage';
 
 const IndexPage: FC = (): JSX.Element => {
-  const {
-    data: pokemon,
-    isLoading: pokemonIsLoading,
-    isError: pokemonIsError,
-  } = useFetchPokemon();
+  const { isLoading: pokemonIsLoading } = useFetchPokemon();
 
   if (pokemonIsLoading) {
     return <BeatLoader color="#fff" />;
   }
 
-  console.log(pokemon);
   return (
     <HomePage />
     // <div>

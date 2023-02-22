@@ -9,6 +9,13 @@ const nextConfig = {
         port: '',
         pathname: '/artwork/large/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname:
+          '/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/**',
+      },
     ],
   },
   experimental: {
