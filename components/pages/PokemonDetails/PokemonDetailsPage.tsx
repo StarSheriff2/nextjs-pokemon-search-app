@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { PokemonData } from '@/pages/hooks/types';
-import PokemonCardDetails from '@/components/UI/molecules/PokemonCardDetails';
+import PokemonCardDetails from '@/components/UI/organisms/PokemonCardDetails';
 import DetailsTemplate from '@/components/templates/DetailsTemplate';
 
 interface Props {

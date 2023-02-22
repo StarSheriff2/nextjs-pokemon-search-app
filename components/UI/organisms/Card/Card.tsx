@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
-import Image from 'next/image';
 import CardBody from '../../molecules/CardBody';
-import CardImage from '../../molecules/CardImage';
+import ResponsiveImage from '../../atoms/ResponsiveImage';
 
 interface Props {
-  // imgSrc: string;
+  imgSrc: string;
   // imgFilename: string;
   imgAlt: string;
   // imgWidth: number;
-  // imgHeight: number;
+  imgHeight: string;
+  cardHeight: string;
+  cardWidth: string;
   // title: string;
   // description: string;
   // ctaLink: string;
@@ -17,28 +18,32 @@ interface Props {
 }
 
 const Card: FC<Props> = ({
-  // imgSrc,
+  imgSrc,
   // imgFilename,
   imgAlt,
   // imgWidth,
-  // imgHeight,
+  imgHeight,
+  cardHeight,
+  cardWidth,
   // title,
   // description,
   // ctaLink,
   // ctaText,
   // imgLoader
 }): JSX.Element => {
+  console.log({ imgSrc });
   return (
-    <div>
-      <CardImage>
-        <Image
-          src="https://img.pokemondb.net/artwork/large/pikachu.jpg"
-          alt={imgAlt}
-          width={100}
-          height={24}
-          priority
-        />
-      </CardImage>
+    <div
+      style={{
+        height: cardHeight,
+        width: cardWidth,
+      }}
+    >
+      <ResponsiveImage
+        src={imgSrc}
+        imageWrapperHeight={imgHeight}
+        alt={imgAlt}
+      />
       <CardBody />
     </div>
   );

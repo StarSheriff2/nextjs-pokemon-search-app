@@ -36,6 +36,10 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
           {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
         </li>
         <li>
+          <strong>Type:</strong>{' '}
+          {pokemon.types.map((type) => type.type.name).join(', ')}
+        </li>
+        <li>
           <strong>Stats:</strong>{' '}
           {pokemon.stats.map((stat) => stat.stat.name).join(', ')}
         </li>

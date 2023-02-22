@@ -16,6 +16,12 @@ const nextConfig = {
         pathname:
           '/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'pokeapi.co',
+        port: '',
+        pathname: '/api/v2/pokemon/**',
+      },
     ],
   },
   experimental: {

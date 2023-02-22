@@ -13,6 +13,7 @@ const IndexPage: FC = (): JSX.Element => {
     isFetching,
     isRefetching,
     isSuccess: pokemonIsSuccess,
+    data: pokemonList,
   } = useFetchPokemon();
 
   if (isInitialLoading || pokemonIsLoading || isFetching || isRefetching) {
@@ -23,7 +24,11 @@ const IndexPage: FC = (): JSX.Element => {
     );
   }
 
-  return <HomePage />;
+  if (pokemonIsSuccess) {
+    return <HomePage pokemonList={pokemonList} />;
+  }
+
+  return <></>;
 };
 
 export default IndexPage;
