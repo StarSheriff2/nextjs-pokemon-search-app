@@ -1,7 +1,7 @@
 import { PokemonData } from '@/pages/hooks/types';
 import { styled } from '@stitches/react';
-import Image from 'next/image';
 import { FC } from 'react';
+import ResponsiveImage from '../../atoms/ResponsiveImage';
 
 interface Props {
   pokemon: PokemonData;
@@ -15,14 +15,8 @@ const DetailsCard = styled('div', {
   background: 'lightgreen',
 });
 
-const ImageWrapper = styled('div', {
-  position: 'relative',
-  width: '100%',
-  height: '200px',
-  background: 'red',
-});
-
 const PokemonInfo = styled('ul', {
+  padding: '1rem',
   '& li': {
     padding: '0.1rem',
   },
@@ -31,17 +25,11 @@ const PokemonInfo = styled('ul', {
 const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
   return (
     <DetailsCard>
-      <ImageWrapper>
-        <Image
-          src={pokemon.sprites?.other['official-artwork']?.front_default}
-          alt={`${pokemon.name} artwork`}
-          fill
-          style={{
-            objectFit: 'contain',
-            background: 'white',
-          }}
-        />
-      </ImageWrapper>
+      <ResponsiveImage
+        src={pokemon.sprites?.other['official-artwork']?.front_default}
+        alt={`${pokemon.name} artwork`}
+        imageWrapperHeight="200px"
+      />
       <PokemonInfo>
         <li>
           <strong>Name:</strong>{' '}
@@ -49,15 +37,21 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
         </li>
         <li>
           <strong>Stats:</strong>{' '}
-          {pokemon.stats.map((stat) => `${stat.stat.name}, `)}
+          {pokemon.stats.map((stat) => stat.stat.name).join(', ')}
         </li>
         <li>
           <strong>Abilities:</strong>{' '}
-          {pokemon.abilities.map((ability) => `${ability.ability.name}, `)}
+          {pokemon.abilities
+            .slice(0, 5)
+            .map((ability) => ability.ability.name)
+            .join(', ')}
         </li>
         <li>
           <strong>Some Moves:</strong>{' '}
-          {pokemon.moves.slice(0, 5).map((move) => `${move.move.name}, `)}
+          {pokemon.moves
+            .slice(0, 5)
+            .map((move) => move.move.name)
+            .join(', ')}
         </li>
       </PokemonInfo>
     </DetailsCard>
