@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Head from 'next/head';
 import Header from '@/components/UI/molecules/Header';
-import ContainerW1024 from '@/components/UI/atoms/ContainerW1024';
+import Container from '@/components/UI/atoms/Container';
 import Link from 'next/link';
 import Text from '@/components/UI/atoms/Text';
 
@@ -23,12 +23,14 @@ const DetailsTemplate: FC<Props> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Link href={backPath}>
-        <Text>{backPathText}</Text>
-      </Link>
-      <ContainerW1024>
+      <Container>
+        <Link href={backPath}>
+          <Text>
+            <strong>{backPathText}</strong>
+          </Text>
+        </Link>
         <main>{children}</main>
-      </ContainerW1024>
+      </Container>
     </div>
   );
 };

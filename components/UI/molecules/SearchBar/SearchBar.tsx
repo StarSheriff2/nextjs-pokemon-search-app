@@ -59,10 +59,12 @@ const SearchBar: FC<Props> = ({
         <Input
           type="text"
           placeholder="Search..."
-          onChange={setSearchText}
+          onChange={({ target: { value } }) => setSearchText(value)}
           value={searchText}
         />
-        <Button onClick={() => {}} text="Search" search />
+        <Button onClick={() => {}} search>
+          Search
+        </Button>
       </div>
       <SearchResults
         searchResults={searchResults}

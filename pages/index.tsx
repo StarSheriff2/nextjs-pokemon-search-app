@@ -1,7 +1,7 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { useFetchPokemonWithInfinityScroll } from './hooks/usePokemon';
 import HomePage from '@/components/pages/HomePage';
-import ContainerW1024 from '@/components/UI/atoms/ContainerW1024';
+import Container from '@/components/UI/atoms/Container';
 import MyBeatLoader from '@/components/UI/molecules/BeatLoader';
 import useFetchNextPage from './hooks/useFetchNextPage';
 
@@ -13,9 +13,9 @@ const IndexPage: FC = (): JSX.Element => {
 
   if (isInitialLoading) {
     return (
-      <ContainerW1024 page="spinner">
+      <Container page="spinner">
         <MyBeatLoader loading={isInitialLoading} />
-      </ContainerW1024>
+      </Container>
     );
   }
 

@@ -1,5 +1,4 @@
 import { styled } from '@stitches/react';
-import React, { FC } from 'react';
 import { Quicksand } from '@next/font/google';
 
 const quicksand = Quicksand({
@@ -7,14 +6,7 @@ const quicksand = Quicksand({
   style: 'normal',
 });
 
-interface Props {
-  type: string;
-  value: string;
-  placeholder: string;
-  onChange: (value: string) => void;
-}
-
-const StyledInput = styled('input', {
+const Input = styled('input', {
   background: '#FFFFFF',
   borderRadius: '0',
   flex: 'none',
@@ -37,14 +29,5 @@ const StyledInput = styled('input', {
     fontFamily: quicksand.style.fontFamily,
   },
 });
-
-const Input: FC<Props> = ({ type, value, placeholder, onChange }) => (
-  <StyledInput
-    type={type}
-    value={value}
-    placeholder={placeholder}
-    onChange={({ target: { value } }) => onChange(value)}
-  />
-);
 
 export default Input;

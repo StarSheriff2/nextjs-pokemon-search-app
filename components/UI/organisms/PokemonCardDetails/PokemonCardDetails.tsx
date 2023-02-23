@@ -61,24 +61,10 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
         <li>
           <p>
             <a
-              onClick={() => {}}
-              // onClick={() => setPostId(post.id)}
               href={`https://bulbapedia.bulbagarden.net/wiki/${pokemon.name} `}
               target="_blank"
               rel="noopener noreferrer"
-              // style={
-              //   // We can access the query data here to show bold links for
-              //   // ones that are cached
-              //   queryClient.getQueryData(['post', post.id])
-              //     ? {
-              //         fontWeight: 'bold',
-              //         color: 'green',
-              //       }
-              //     : {}
-              // }
             >
-              {/* {post.title} */}
-              {/* {linkText} */}
               More details at bulbapedia
             </a>
           </p>

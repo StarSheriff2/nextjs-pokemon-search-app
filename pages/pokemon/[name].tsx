@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { searchPokemon, useSearchPokemon } from '@/pages/hooks/usePokemon';
 import PokemonDetailsPage from '@/components/pages/PokemonDetails';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
-import ContainerW1024 from '@/components/UI/atoms/ContainerW1024';
+import Container from '@/components/UI/atoms/Container';
 import MyBeatLoader from '@/components/UI/molecules/BeatLoader';
 import Title from '@/components/UI/atoms/Title';
 
@@ -25,15 +25,15 @@ const PokemonDetails: FC = (): JSX.Element => {
 
   if (isInitialLoading || isLoading || isFetching || isRefetching) {
     return (
-      <ContainerW1024 page="spinner">
+      <Container page="spinner">
         <MyBeatLoader loading={pokemonIsSuccess} />
-      </ContainerW1024>
+      </Container>
     );
   }
 
   if (pokemonIsError) {
     return (
-      <ContainerW1024 page="spinner">
+      <Container page="spinner">
         <Title>We couldn't find your pokemon </Title>
         <div
           style={{ textAlign: 'center', margin: '0 auto' }}
@@ -42,7 +42,7 @@ const PokemonDetails: FC = (): JSX.Element => {
         >
           😢
         </div>
-      </ContainerW1024>
+      </Container>
     );
   }
 
