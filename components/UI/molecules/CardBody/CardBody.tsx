@@ -39,7 +39,6 @@ const CardBody: FC<Props> = ({ title, description, linkText, linkPath }) => {
           style={{
             fontWeight: 500,
             fontSize: '0.875rem',
-            // color: '#408Ab6',
             color: queryClient.getQueryData([
               'searchPokemon',
               title.toLowerCase(),

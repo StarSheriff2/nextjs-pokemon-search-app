@@ -5,7 +5,7 @@ import {
   IMG_ALT_KEY,
   IMG_URL_KEY,
   LINK_PATH_KEY,
-} from '@/pages/hooks/usePokemon';
+} from '@/utils/mapPokemonPaginatedResults';
 import { InfiniteData } from '@tanstack/react-query';
 import { FC } from 'react';
 
