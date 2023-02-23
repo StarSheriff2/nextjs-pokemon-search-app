@@ -1,5 +1,8 @@
 // https://pokeapi.co/api/v2/pokemon?limit=151 to get all the pokemon with a limit
 
+export interface GenericItem {
+  [key: string | symbol]: string;
+}
 export interface Result {
   name: string;
   url: string;
@@ -9,7 +12,7 @@ export interface PokemonList {
   count: number;
   next?: string;
   previous?: string;
-  results: Result[];
+  results: Result[] | GenericItem[];
 }
 
 // Search Pokemon: https://pokeapi.co/api/v2/pokemon/{id-or-name}/

@@ -1,17 +1,18 @@
 import React, { FC } from 'react';
 import { styled } from '@stitches/react';
 import Card from '../Card';
-import { Item } from '@/components/types/types';
+import PokemonList, { GenericItem } from '@/pages/hooks/types';
+import { InfiniteData } from '@tanstack/react-query';
 
 const CARD_WIDTH = '320px';
 const CARD_HEIGHT = '360px';
 const IMG_HEIGHT = '167px';
 interface Props {
-  list: Item[];
-  titleKey: keyof Item;
-  imgSrcKey: keyof Item;
-  imgAltKey: keyof Item;
-  linkPathKey: keyof Item;
+  list: InfiniteData<PokemonList>;
+  titleKey: keyof GenericItem;
+  imgSrcKey: keyof GenericItem;
+  imgAltKey: keyof GenericItem;
+  linkPathKey: keyof GenericItem;
 }
 
 const GridContainer = styled('div', {
@@ -29,9 +30,15 @@ const ItemList: FC<Props> = ({
   imgAltKey,
   linkPathKey,
 }) => {
+  // const allItems: GenericItem[] = list.pages.flatMap((page) => page.results);
+  const flattenedData: GenericItem[] =
+    list?.pages.flatMap((page) => page.results as GenericItem[]) || [];
+
+  // console.log({ flattenedData });
+
   return (
     <GridContainer>
-      {list.map((item) => (
+      {flattenedData.map((item) => (
         <Card
           key={item[titleKey]}
           cardHeight={CARD_HEIGHT}
