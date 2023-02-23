@@ -36,7 +36,11 @@ const StyledContainer = styled('div', {
 });
 
 const ContainerW1024: FC<Props> = ({ children, page }): JSX.Element => {
-  return <StyledContainer page={page}>{children}</StyledContainer>;
+  return (
+    <StyledContainer onScroll={() => console.log('scrolling')} page={page}>
+      {children}
+    </StyledContainer>
+  );
 };
 
 ContainerW1024.defaultProps = defaultProps;

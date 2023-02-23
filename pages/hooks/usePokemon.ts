@@ -1,11 +1,15 @@
 import useStore from '@/store/useStore';
 import findPokemonSuggestions from '@/utils/findPokemonSuggestions';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useInfiniteQuery } from '@tanstack/react-query';
 import api from '../api/pokemon';
 import PokemonList, { PokemonData } from './types';
 
-const fetchPokemon = async () => {
-  const { data } = await api.get<PokemonList>('/pokemon?limit=10');
+const FETCH_LIMIT = 9;
+
+const fetchPokemon = async (offset: number) => {
+  const { data } = await api.get<PokemonList>(
+    `/pokemon?limit=${FETCH_LIMIT}&offset=${offset}`
+  );
   return data;
 };
 
@@ -14,9 +18,39 @@ export const searchPokemon = async (query: string) => {
   return data;
 };
 
-const useFetchPokemon = () => {
+// const { data, isSuccess, hasNextPage, fetchNextPage, isFetchingNextPage } =
+//   useInfiniteQuery(
+//     'repos',
+//     ({ pageParam = 1 }) => fetchRepositories(pageParam),
+//     {
+//       getNextPageParam: (lastPage, allPages) => {
+//         const nextPage = allPages.length + 1;
+//         return nextPage;
+//       },
+//     }
+//   );
+
+export const useFetchPokemonWithInfinityScroll = () => {
+  // const { setData } = useStore((state) => state);
+  return useInfiniteQuery(
+    ['pokemon'],
+    ({ pageParam = 1 }) => fetchPokemon(pageParam),
+    {
+      getNextPageParam: (lastPage, allPages) => {
+        const nextPage = allPages.length + 1;
+        return nextPage;
+      },
+      // onSuccess: (data) => setData(data),
+    }
+  );
+  // return useQuery(['pokemon'], () => fetchPokemon(offset), {
+  //   onSuccess: (data) => setData(data),
+  // });
+};
+
+export const useFetchPokemon = (offset: number = 0) => {
   const { setData } = useStore((state) => state);
-  return useQuery(['pokemon'], fetchPokemon, {
+  return useQuery(['pokemon'], () => fetchPokemon(offset), {
     onSuccess: (data) => setData(data),
   });
 };
