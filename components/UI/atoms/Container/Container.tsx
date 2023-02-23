@@ -1,6 +1,9 @@
 import { styled } from '@stitches/react';
 
 const Container = styled('div', {
+  defaultVariants: {
+    page: 'template',
+  },
   margin: '0 auto',
   variants: {
     page: {
