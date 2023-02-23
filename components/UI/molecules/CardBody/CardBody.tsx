@@ -3,6 +3,7 @@ import Title from '../../atoms/Title';
 import Text from '../../atoms/Text';
 import { styled } from '@stitches/react';
 import Link from 'next/link';
+import queryClient from '@/pages/queryClient';
 
 interface Props {
   title: string;
@@ -34,7 +35,21 @@ const CardBody: FC<Props> = ({ title, description, linkText, linkPath }) => {
         {description && <Text>{description}</Text>}
       </div>
       <div>
-        <Link href={linkPath}>{linkText}</Link>
+        <p
+          style={{
+            fontWeight: 500,
+            fontSize: '0.875rem',
+            // color: '#408Ab6',
+            color: queryClient.getQueryData([
+              'searchPokemon',
+              title.toLowerCase(),
+            ])
+              ? 'purple'
+              : '#408ab6',
+          }}
+        >
+          <Link href={linkPath}>{linkText}</Link>
+        </p>
       </div>
     </StyledCardBody>
   );

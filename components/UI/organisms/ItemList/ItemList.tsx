@@ -30,11 +30,8 @@ const ItemList: FC<Props> = ({
   imgAltKey,
   linkPathKey,
 }) => {
-  // const allItems: GenericItem[] = list.pages.flatMap((page) => page.results);
   const flattenedData: GenericItem[] =
     list?.pages.flatMap((page) => page.results as GenericItem[]) || [];
-
-  // console.log({ flattenedData });
 
   return (
     <GridContainer>

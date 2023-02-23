@@ -8,7 +8,7 @@ interface Props {
 }
 
 const DetailsCard = styled('div', {
-  height: '400px',
+  height: '450px',
   maxWidth: '300px',
   margin: '0 auto',
   background: 'lightgreen',
@@ -63,7 +63,7 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
             <a
               onClick={() => {}}
               // onClick={() => setPostId(post.id)}
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              href={`https://bulbapedia.bulbagarden.net/wiki/${pokemon.name} `}
               target="_blank"
               rel="noopener noreferrer"
               // style={
@@ -79,7 +79,7 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
             >
               {/* {post.title} */}
               {/* {linkText} */}
-              some link
+              More details at bulbapedia
             </a>
           </p>
         </li>

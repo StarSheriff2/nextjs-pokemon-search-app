@@ -35,6 +35,7 @@ const ResponsiveImage: FC<Props> = ({
         style={{
           objectFit: 'contain',
           background: 'transparent',
+          padding: '1rem',
         }}
         loading="lazy"
       />

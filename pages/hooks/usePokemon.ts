@@ -23,8 +23,6 @@ const fetchPokemon = async (offset: number) => {
   }));
 
   data.results = mappedResults;
-
-  console.log({ data });
   return data;
 };
 
@@ -53,6 +51,7 @@ export const useSearchPokemon = (query: string) => {
   return useQuery(['searchPokemon', query], () => searchPokemon(query), {
     enabled: query.length > 0,
     staleTime: Infinity,
+    retry: false,
   });
 };
 

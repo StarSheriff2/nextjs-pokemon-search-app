@@ -5,18 +5,12 @@ import { styled } from '@stitches/react';
 
 interface Props {
   imgSrc: string;
-  // imgFilename: string;
   imgAlt: string;
-  // imgWidth: number;
   imgHeight: string;
   cardHeight: string;
   cardWidth: string;
   title: string;
   linkPath: string;
-  // description: string;
-  // ctaLink: string;
-  // ctaText: string;
-  // imgLoader?: () => void;
 }
 
 const StyledCard = styled('div', {

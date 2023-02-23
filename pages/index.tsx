@@ -5,25 +5,8 @@ import ContainerW1024 from '@/components/UI/atoms/ContainerW1024';
 import MyBeatLoader from '@/components/UI/molecules/BeatLoader';
 
 const IndexPage: FC = (): JSX.Element => {
-  // const {
-  //   isLoading: pokemonIsLoading,
-  //   isInitialLoading,
-  //   isFetching,
-  //   isRefetching,
-  //   isSuccess: pokemonIsSuccess,
-  //   data: pokemonList,
-  // } = useFetchPokemon();
-
-  const {
-    data,
-    isSuccess,
-    hasNextPage,
-    fetchNextPage,
-    isFetchingNextPage,
-    isInitialLoading,
-  } = useFetchPokemonWithInfinityScroll();
-
-  // data?.pages.map((p) => console.log('results: ', p.results));
+  const { data, isSuccess, hasNextPage, fetchNextPage, isInitialLoading } =
+    useFetchPokemonWithInfinityScroll();
 
   useEffect(() => {
     let fetching = false;
