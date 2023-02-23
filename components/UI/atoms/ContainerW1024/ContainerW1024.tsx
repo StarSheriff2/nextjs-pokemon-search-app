@@ -14,7 +14,7 @@ const defaultProps: {
 };
 
 const StyledContainer = styled('div', {
-  background: '#f0f0f0',
+  // background: '#f0f0f0',
   margin: '0 auto',
   variants: {
     page: {

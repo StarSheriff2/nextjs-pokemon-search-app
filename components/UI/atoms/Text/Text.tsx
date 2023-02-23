@@ -5,7 +5,15 @@ interface Props {
 }
 
 const Text: FC<Props> = ({ children }) => {
-  return <p>{children}</p>;
+  return (
+    <p
+      style={{
+        color: '#436070',
+      }}
+    >
+      {children}
+    </p>
+  );
 };
 
 export default Text;

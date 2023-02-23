@@ -21,7 +21,11 @@ const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        background: '#f0f0f0',
+      }}
+    >
       <Head>
         <title>Pokemon</title>
         <link rel="icon" href="/favicon.ico" />

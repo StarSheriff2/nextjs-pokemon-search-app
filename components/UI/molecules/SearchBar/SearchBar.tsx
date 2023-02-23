@@ -18,7 +18,6 @@ const StyledSearchBarWrapper = styled('div', {
   maxWidth: '629px',
   borderRadius: '8px',
   background: '#ffffff',
-  border: 'red solid 2px',
   '& div': {
     display: 'flex',
     flexDirection: 'row',

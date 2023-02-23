@@ -12,6 +12,7 @@ interface Props {
 const ImageWrapper = styled('div', {
   position: 'relative',
   width: '100%',
+  borderRadius: '8px 8px 0px 0px',
 });
 
 const ResponsiveImage: FC<Props> = ({
@@ -24,6 +25,7 @@ const ResponsiveImage: FC<Props> = ({
     <ImageWrapper
       css={{
         height: imageWrapperHeight,
+        background: bgd,
       }}
     >
       <Image
@@ -32,8 +34,9 @@ const ResponsiveImage: FC<Props> = ({
         fill
         style={{
           objectFit: 'contain',
-          background: bgd,
+          background: 'transparent',
         }}
+        loading="lazy"
       />
     </ImageWrapper>
   );

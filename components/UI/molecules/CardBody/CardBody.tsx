@@ -1,39 +1,42 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Title from '../../atoms/Title';
 import Text from '../../atoms/Text';
+import { styled } from '@stitches/react';
+import Link from 'next/link';
 
-const CardBody = () => {
+interface Props {
+  title: string;
+  linkText: string;
+  linkPath: string;
+  description?: string;
+}
+
+const StyledCardBody = styled('div', {
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  alignItems: 'flex-start',
+  padding: '2rem',
+  gap: '1.5rem',
+  background: '#fafafa',
+  borderRadius: '0px 0px 8px 8px',
+  flex: 'none',
+  order: 1,
+  flexGrow: 2,
+});
+
+const CardBody: FC<Props> = ({ title, description, linkText, linkPath }) => {
   return (
-    <>
+    <StyledCardBody>
       <div>
-        <Title>Pikachu</Title>
-        <Text>Some description</Text>
+        <Title>{title}</Title>
+        {description && <Text>{description}</Text>}
       </div>
       <div>
-        {/* {data.map((post) => ( */}
-        <p>
-          <a
-            onClick={() => {}}
-            // onClick={() => setPostId(post.id)}
-            href="#"
-            // style={
-            //   // We can access the query data here to show bold links for
-            //   // ones that are cached
-            //   queryClient.getQueryData(['post', post.id])
-            //     ? {
-            //         fontWeight: 'bold',
-            //         color: 'green',
-            //       }
-            //     : {}
-            // }
-          >
-            {/* {post.title} */}
-            Some link
-          </a>
-        </p>
-        {/* // ))} */}
+        <Link href={linkPath}>{linkText}</Link>
       </div>
-    </>
+    </StyledCardBody>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import CardBody from '../../molecules/CardBody';
 import ResponsiveImage from '../../atoms/ResponsiveImage';
+import { styled } from '@stitches/react';
 
 interface Props {
   imgSrc: string;
@@ -10,31 +11,33 @@ interface Props {
   imgHeight: string;
   cardHeight: string;
   cardWidth: string;
-  // title: string;
+  title: string;
+  linkPath: string;
   // description: string;
   // ctaLink: string;
   // ctaText: string;
   // imgLoader?: () => void;
 }
 
+const StyledCard = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  padding: '0px',
+});
+
 const Card: FC<Props> = ({
   imgSrc,
-  // imgFilename,
   imgAlt,
-  // imgWidth,
   imgHeight,
   cardHeight,
   cardWidth,
-  // title,
-  // description,
-  // ctaLink,
-  // ctaText,
-  // imgLoader
+  title,
+  linkPath,
 }): JSX.Element => {
-  console.log({ imgSrc });
   return (
-    <div
-      style={{
+    <StyledCard
+      css={{
         height: cardHeight,
         width: cardWidth,
       }}
@@ -43,9 +46,10 @@ const Card: FC<Props> = ({
         src={imgSrc}
         imageWrapperHeight={imgHeight}
         alt={imgAlt}
+        bgd="white"
       />
-      <CardBody />
-    </div>
+      <CardBody title={title} linkText="Details →" linkPath={linkPath} />
+    </StyledCard>
   );
 };
 

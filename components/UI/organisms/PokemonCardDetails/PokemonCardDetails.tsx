@@ -9,10 +9,10 @@ interface Props {
 
 const DetailsCard = styled('div', {
   height: '400px',
-  border: 'orange solid 2px',
   maxWidth: '300px',
   margin: '0 auto',
   background: 'lightgreen',
+  borderRadius: '8px 8px 8px 8px',
 });
 
 const PokemonInfo = styled('ul', {
@@ -29,6 +29,7 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
         src={pokemon.sprites?.other['official-artwork']?.front_default}
         alt={`${pokemon.name} artwork`}
         imageWrapperHeight="200px"
+        bgd="orange"
       />
       <PokemonInfo>
         <li>
@@ -56,6 +57,31 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
             .slice(0, 5)
             .map((move) => move.move.name)
             .join(', ')}
+        </li>
+        <li>
+          <p>
+            <a
+              onClick={() => {}}
+              // onClick={() => setPostId(post.id)}
+              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              target="_blank"
+              rel="noopener noreferrer"
+              // style={
+              //   // We can access the query data here to show bold links for
+              //   // ones that are cached
+              //   queryClient.getQueryData(['post', post.id])
+              //     ? {
+              //         fontWeight: 'bold',
+              //         color: 'green',
+              //       }
+              //     : {}
+              // }
+            >
+              {/* {post.title} */}
+              {/* {linkText} */}
+              some link
+            </a>
+          </p>
         </li>
       </PokemonInfo>
     </DetailsCard>

@@ -5,7 +5,15 @@ interface Props {
 }
 
 const Title: FC<Props> = ({ children }) => {
-  return <h2>{children}</h2>;
+  return (
+    <h2
+      style={{
+        color: '#143c52',
+      }}
+    >
+      {children}
+    </h2>
+  );
 };
 
 export default Title;
