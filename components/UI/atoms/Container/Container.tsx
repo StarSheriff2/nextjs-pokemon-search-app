@@ -8,7 +8,7 @@ const Container = styled('div', {
   variants: {
     page: {
       template: {
-        maxWidth: '1024px',
+        maxWidth: 'calc(1024px + 2rem)',
         minHeight: 'calc(100vh - 92px - 213px)',
       },
       spinner: {

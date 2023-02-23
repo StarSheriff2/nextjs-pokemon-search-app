@@ -21,6 +21,7 @@ const GridContainer = styled('div', {
   gridTemplateColumns: `repeat(auto-fit, minmax(${CARD_WIDTH}, 1fr))`,
   gap: '2rem',
   justifyItems: 'center',
+  padding: '0 1rem',
 });
 
 const ItemList: FC<Props> = ({

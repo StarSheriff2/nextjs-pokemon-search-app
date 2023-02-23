@@ -5,10 +5,15 @@ import SearchBar from '@/components/UI/molecules/SearchBar';
 import useDebounce from '@/pages/hooks/useDebounce';
 import { useFindPokemonSuggestions } from '@/pages/hooks/usePokemon';
 import Container from '@/components/UI/atoms/Container';
+import { styled } from '@stitches/react';
 
 interface Props {
   children?: React.ReactNode;
 }
+
+const StyledDiv = styled('div', {
+  background: '#f0f0f0',
+});
 
 const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
   const [searchValue, setSearchValue] = useState('');
@@ -21,11 +26,7 @@ const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
   };
 
   return (
-    <div
-      style={{
-        background: '#f0f0f0',
-      }}
-    >
+    <StyledDiv>
       <Head>
         <title>Pokemon</title>
         <link rel="icon" href="/favicon.ico" />
@@ -39,7 +40,7 @@ const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
         />
         <main>{children}</main>
       </Container>
-    </div>
+    </StyledDiv>
   );
 };
 
