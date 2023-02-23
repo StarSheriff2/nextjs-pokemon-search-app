@@ -18,23 +18,11 @@ export const searchPokemon = async (query: string) => {
   return data;
 };
 
-// const { data, isSuccess, hasNextPage, fetchNextPage, isFetchingNextPage } =
-//   useInfiniteQuery(
-//     'repos',
-//     ({ pageParam = 1 }) => fetchRepositories(pageParam),
-//     {
-//       getNextPageParam: (lastPage, allPages) => {
-//         const nextPage = allPages.length + 1;
-//         return nextPage;
-//       },
-//     }
-//   );
-
 export const useFetchPokemonWithInfinityScroll = () => {
   // const { setData } = useStore((state) => state);
   return useInfiniteQuery(
-    ['pokemon'],
-    ({ pageParam = 1 }) => fetchPokemon(pageParam),
+    ['pokemonList'],
+    ({ pageParam = 0 }) => fetchPokemon(pageParam),
     {
       getNextPageParam: (lastPage, allPages) => {
         const nextPage = allPages.length + 1;
@@ -43,17 +31,14 @@ export const useFetchPokemonWithInfinityScroll = () => {
       // onSuccess: (data) => setData(data),
     }
   );
-  // return useQuery(['pokemon'], () => fetchPokemon(offset), {
-  //   onSuccess: (data) => setData(data),
-  // });
 };
 
-export const useFetchPokemon = (offset: number = 0) => {
-  const { setData } = useStore((state) => state);
-  return useQuery(['pokemon'], () => fetchPokemon(offset), {
-    onSuccess: (data) => setData(data),
-  });
-};
+// export const useFetchPokemon = (offset: number = 0) => {
+//   const { setData } = useStore((state) => state);
+//   return useQuery(['pokemon'], () => fetchPokemon(offset), {
+//     onSuccess: (data) => setData(data),
+//   });
+// };
 
 export const useSearchPokemon = (query: string) => {
   return useQuery(['searchPokemon', query], () => searchPokemon(query), {
@@ -72,4 +57,4 @@ export const useFindPokemonSuggestions = (slug: string) => {
   );
 };
 
-export default useFetchPokemon;
+// export default useFetchPokemon;
