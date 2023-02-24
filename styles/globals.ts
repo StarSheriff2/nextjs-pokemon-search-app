@@ -5,6 +5,7 @@ const globalStyles = globalCss({
     boxSizing: 'border-box',
     margin: 0,
     padding: 0,
+    fontFamily: '$quicksand',
   },
   'html, body': {
     maxWidth: '$100vw',

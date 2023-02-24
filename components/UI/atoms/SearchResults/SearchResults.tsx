@@ -1,7 +1,6 @@
-import useOnClickOutside from '@/pages/hooks/useOnClickOutSide';
-import { styled } from '@stitches/react';
+import React, { FC } from 'react';
 import Link from 'next/link';
-import React, { FC, useRef, useState } from 'react';
+import { styled } from '@/stitches.config';
 
 interface Props {
   searchResults: Array<string | object>;
@@ -13,10 +12,9 @@ const StyledUl = styled('ul', {
   display: 'none',
   overflow: 'scroll',
   position: 'absolute',
-  width: '60%',
+  width: '$w100',
   top: '60px',
   zIndex: 1,
-  paddingLeft: '3rem',
   variants: {
     show: {
       true: {
@@ -25,15 +23,18 @@ const StyledUl = styled('ul', {
     },
   },
   '& li': {
-    borderBottom: '#004368 solid 2px',
-    borderRight: '#004368 solid 2px',
-    borderLeft: '#004368 solid 2px',
-    padding: '0.25rem',
-    width: '100%',
-    backgroundColor: '#ffffff',
+    width: '$w100',
+    backgroundColor: '$w100',
+    fontSize: '$4',
+    color: '$grey500MutedColour',
     '& a': {
-      width: '100%',
+      padding: '$1',
       display: 'block',
+      width: '$w100',
+    },
+    '&:hover': {
+      backgroundColor: '$colors$seafoamPale',
+      color: '$color$w100',
     },
   },
 });

@@ -8,12 +8,12 @@ const Container = styled('div', {
   variants: {
     page: {
       template: {
-        maxWidth: 'calc(1024px + 2rem)',
-        minHeight: 'calc(100vh - 92px - 213px)',
+        maxWidth: 'calc($1024 + $fontSizes$7)',
+        minHeight: 'calc($vw100 - 92px - 213px)',
       },
       spinner: {
-        maxWidth: '100vw',
-        minHeight: '100vh',
+        maxWidth: '$vw100',
+        minHeight: '$vh100',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -22,7 +22,7 @@ const Container = styled('div', {
     },
   },
   '& main': {
-    padding: '3.5rem 0',
+    padding: '$8 0',
   },
 });
 

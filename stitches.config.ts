@@ -1,5 +1,5 @@
 import { Quicksand } from '@next/font/google';
-import { createStitches } from '@stitches/react';
+import { createStitches, CSSProperties } from '@stitches/react';
 
 const quicksand = Quicksand({
   weight: ['400', '500', '600', '700'],
@@ -77,6 +77,8 @@ export const { styled, getCssText, css, globalCss } = createStitches({
       4: '16px',
       5: '24px',
       6: '32px',
+      7: '48px',
+      8: '56px',
     },
     fontSizes: {
       1: '12px',
@@ -102,17 +104,17 @@ export const { styled, getCssText, css, globalCss } = createStitches({
       1: '-0.02em',
     },
     sizes: {
-      1024: '1024',
+      1024: '1024px',
       vw100: '100vw',
+      vh100: '100vh',
       cardWidth: '320px',
       cardHeight: '360px',
       imgHeight: '167px',
       w100: '100%',
     },
     borderWidths: {
-      1: '12px',
-      2: '14px',
-      3: '16px',
+      1: '1px',
+      2: '2px',
     },
     borderStyles: {},
     radii: {
@@ -122,5 +124,10 @@ export const { styled, getCssText, css, globalCss } = createStitches({
     shadows: {},
     zIndices: {},
     transitions: {},
+  },
+  utils: {
+    calc: (a: CSSProperties, ...args: CSSProperties[]) => ({
+      $$: a,
+    }),
   },
 });
