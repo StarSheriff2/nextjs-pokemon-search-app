@@ -1,8 +1,8 @@
 import findPokemonSuggestions from '@/utils/findPokemonSuggestions';
 import mapListResults from '@/utils/mapPokemonPaginatedResults';
 import { useQuery, useInfiniteQuery } from '@tanstack/react-query';
-import api from '../api/pokemon';
-import PokemonList, { PokemonData, Result } from '../../lib/types';
+import api from '../pages/api/pokemon';
+import PokemonList, { PokemonData, Result } from '../lib/types';
 
 const FETCH_LIMIT = 9;
 

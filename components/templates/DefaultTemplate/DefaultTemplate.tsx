@@ -2,11 +2,11 @@ import React, { FC, useState } from 'react';
 import Head from 'next/head';
 import Header from '@/components/UI/molecules/Header';
 import SearchBar from '@/components/UI/molecules/SearchBar';
-import useDebounce from '@/pages/hooks/useDebounce';
+import useDebounce from '@/hooks/useDebounce';
 import Container from '@/components/UI/atoms/Container';
 import { styled } from '@/stitches.config';
 import Title from '@/components/UI/atoms/Title';
-import useFindPokemonSuggestions from '@/pages/hooks/usePokemon';
+import useFindPokemonSuggestions from '@/hooks/usePokemon';
 
 interface Props {
   children?: React.ReactNode;

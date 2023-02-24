@@ -3,7 +3,7 @@ import {
   InfiniteQueryObserverResult,
 } from '@tanstack/react-query';
 import { useEffect } from 'react';
-import PokemonList from '../../lib/types';
+import PokemonList from '../lib/types';
 
 const useFetchNextPage = (
   hasNextPage: boolean | undefined,

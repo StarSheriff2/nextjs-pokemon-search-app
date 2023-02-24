@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
-import { searchPokemon, useSearchPokemon } from '@/pages/hooks/usePokemon';
+import { searchPokemon, useSearchPokemon } from '@/hooks/usePokemon';
 import PokemonDetailsPage from '@/components/pages/PokemonDetails';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import MyBeatLoader from '@/components/UI/molecules/BeatLoader';

@@ -3,7 +3,7 @@ import Input from '../../atoms/Input';
 import Image from 'next/image';
 import Button from '../../atoms/Button';
 import SearchResults from '../../atoms/SearchResults';
-import useOnClickOutside from '@/pages/hooks/useOnClickOutSide';
+import useOnClickOutside from '@/hooks/useOnClickOutSide';
 import { styled } from '@/stitches.config';
 import { useRouter } from 'next/router';
 
