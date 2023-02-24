@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { styled } from '@/stitches.config';
-import { CSS } from '@stitches/react';
 
 interface Props {
   src: string;
   alt?: string;
+  fill?: boolean;
 }
 
 const ImageWrapper = styled('div', {
@@ -13,17 +13,34 @@ const ImageWrapper = styled('div', {
   width: '$w100',
   borderRadius: '$1 $1 0px 0px',
   backgroundColor: '$w100',
+  textAlign: 'center',
 });
 
 const StyledImage = styled(Image, {
-  objectFit: 'contain',
-  background: 'transparent',
+  defaultVariants: {
+    size: 'auto',
+  },
+  variants: {
+    size: {
+      auto: { objectFit: 'contain', background: 'transparent' },
+    },
+  },
 });
 
-const ResponsiveImage: FC<Props> = ({ src, alt = '' }) => {
+const ResponsiveImage: FC<Props> = ({ src, alt = '', fill = false }) => {
   return (
     <ImageWrapper>
-      <StyledImage src={src} alt={alt} fill loading="lazy" />
+      {fill ? (
+        <StyledImage src={src} alt={alt} loading="lazy" fill size={'auto'} />
+      ) : (
+        <StyledImage
+          src={src}
+          width={300}
+          height={300}
+          alt={alt}
+          loading="lazy"
+        />
+      )}
     </ImageWrapper>
   );
 };

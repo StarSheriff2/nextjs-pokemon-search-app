@@ -44,7 +44,7 @@ const Card: FC<Props> = ({
 }): JSX.Element => {
   return (
     <StyledCard size={size}>
-      <ResponsiveImage src={imgSrc} alt={imgAlt} />
+      <ResponsiveImage src={imgSrc} alt={imgAlt} fill={true} />
       <CardBody title={title} linkText="Details →" linkPath={linkPath} />
     </StyledCard>
   );

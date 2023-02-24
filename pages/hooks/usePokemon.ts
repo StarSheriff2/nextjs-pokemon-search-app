@@ -1,9 +1,8 @@
 import findPokemonSuggestions from '@/utils/findPokemonSuggestions';
-import pokemonImgUrl from '@/utils/generatePokemonImageUrl';
 import mapListResults from '@/utils/mapPokemonPaginatedResults';
 import { useQuery, useInfiniteQuery } from '@tanstack/react-query';
 import api from '../api/pokemon';
-import PokemonList, { GenericItem, PokemonData, Result } from '../../lib/types';
+import PokemonList, { PokemonData, Result } from '../../lib/types';
 
 const FETCH_LIMIT = 9;
 

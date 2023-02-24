@@ -9,7 +9,7 @@ const Container = styled('div', {
     page: {
       template: {
         maxWidth: 'calc($1024 + $fontSizes$7)',
-        minHeight: 'calc($vw100 - 92px - 213px)',
+        minHeight: 'calc($vh100 - 92px - 213px)',
       },
       spinner: {
         maxWidth: '$vw100',
