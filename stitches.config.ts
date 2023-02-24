@@ -1,5 +1,5 @@
 import { Quicksand } from '@next/font/google';
-import { createStitches, CSSProperties } from '@stitches/react';
+import { createStitches } from '@stitches/react';
 
 const quicksand = Quicksand({
   weight: ['400', '500', '600', '700'],
