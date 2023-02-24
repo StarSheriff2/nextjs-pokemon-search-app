@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Title from '../../atoms/Title';
 import Text from '../../atoms/Text';
 import Link from 'next/link';
-import queryClient from '@/pages/queryClient';
+import queryClient from '@/lib/queryClient';
 import { styled } from '@/stitches.config';
 
 interface Props {
