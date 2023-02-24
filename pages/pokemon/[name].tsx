@@ -7,6 +7,8 @@ import { dehydrate, QueryClient } from '@tanstack/react-query';
 import MyBeatLoader from '@/components/UI/molecules/BeatLoader';
 import Title from '@/components/UI/atoms/Title';
 import Container from '@/components/UI/atoms/Container';
+import Link from 'next/link';
+import Text from '@/components/UI/atoms/Text';
 
 const PokemonDetails: FC = (): JSX.Element => {
   const router = useRouter();
@@ -34,6 +36,18 @@ const PokemonDetails: FC = (): JSX.Element => {
   if (pokemonIsError) {
     return (
       <Container page="spinner">
+        <Link href={'/'}>
+          <Text
+            textStyle={'textParagraph'}
+            css={{
+              color: '$seafoamDark',
+              marginTop: '$4',
+              marginBottom: '$8',
+            }}
+          >
+            <strong>&lt; Back</strong>
+          </Text>
+        </Link>
         <Title>We couldn&apos;t find your pokemon </Title>
         <div
           style={{ textAlign: 'center', margin: '0 auto' }}

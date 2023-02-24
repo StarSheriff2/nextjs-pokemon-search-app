@@ -5,6 +5,7 @@ import Button from '../../atoms/Button';
 import SearchResults from '../../atoms/SearchResults';
 import useOnClickOutside from '@/pages/hooks/useOnClickOutSide';
 import { styled } from '@/stitches.config';
+import { useRouter } from 'next/router';
 
 interface Props {
   searchText: string;
@@ -38,6 +39,7 @@ const SearchBar: FC<Props> = ({
   const [showSearchResults, setShowSearchResults] = useState(true);
   const resultsContainer = useRef<HTMLDivElement>(null);
   useOnClickOutside(resultsContainer, () => setShowSearchResults(false));
+  const router = useRouter();
 
   return (
     <StyledSearchBarWrapper
@@ -63,7 +65,14 @@ const SearchBar: FC<Props> = ({
           onChange={({ target: { value } }) => setSearchText(value)}
           value={searchText}
         />
-        <Button onClick={() => {}} search>
+        <Button
+          onClick={() =>
+            searchText
+              ? router.push(`/pokemon/${encodeURIComponent(searchText)}`)
+              : {}
+          }
+          search
+        >
           Search
         </Button>
       </div>
