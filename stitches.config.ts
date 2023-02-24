@@ -135,9 +135,4 @@ export const { styled, getCssText, css, globalCss } = createStitches({
     zIndices: {},
     transitions: {},
   },
-  utils: {
-    calc: (a: CSSProperties, ...args: CSSProperties[]) => ({
-      $$: a,
-    }),
-  },
 });
