@@ -4,7 +4,7 @@ import { BeatLoader } from 'react-spinners';
 const override: CSSProperties = {
   display: 'block',
   margin: '0 auto',
-  borderColor: 'red',
+  borderColor: '$color$mangoPale',
   width: 'fit-content',
 };
 

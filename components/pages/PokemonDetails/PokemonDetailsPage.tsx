@@ -9,7 +9,11 @@ interface Props {
 
 const PokemonDetailsPage: FC<Props> = ({ pokemon }): JSX.Element => {
   return (
-    <DetailsTemplate backPath="/" backPathText="&lt; Back">
+    <DetailsTemplate
+      backPath="/"
+      backPathText="&lt; Back"
+      title="Bannano Frontend Challenge"
+    >
       <PokemonCardDetails pokemon={pokemon} />
     </DetailsTemplate>
   );

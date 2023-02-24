@@ -111,6 +111,7 @@ export const { styled, getCssText, css, globalCss } = createStitches({
       cardHeight: '360px',
       imgHeight: '167px',
       w100: '100%',
+      header: '92px',
     },
     borderWidths: {
       1: '1px',

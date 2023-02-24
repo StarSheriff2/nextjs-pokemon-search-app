@@ -4,17 +4,20 @@ import Header from '@/components/UI/molecules/Header';
 import Container from '@/components/UI/atoms/Container';
 import Link from 'next/link';
 import Text from '@/components/UI/atoms/Text';
+import Title from '@/components/UI/atoms/Title';
 
 interface Props {
   children?: React.ReactNode;
   backPath: string;
   backPathText: string;
+  title: string;
 }
 
 const DetailsTemplate: FC<Props> = ({
   children,
   backPath,
   backPathText,
+  title,
 }): JSX.Element => {
   return (
     <div>
@@ -22,7 +25,9 @@ const DetailsTemplate: FC<Props> = ({
         <title>Pokemon Data</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header>
+        <Title as={'h5'}>{title}</Title>
+      </Header>
       <Container>
         <Link href={backPath}>
           <Text

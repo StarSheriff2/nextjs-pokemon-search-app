@@ -6,16 +6,18 @@ import useDebounce from '@/pages/hooks/useDebounce';
 import { useFindPokemonSuggestions } from '@/pages/hooks/usePokemon';
 import Container from '@/components/UI/atoms/Container';
 import { styled } from '@/stitches.config';
+import Title from '@/components/UI/atoms/Title';
 
 interface Props {
   children?: React.ReactNode;
+  title: string;
 }
 
 const StyledDiv = styled('div', {
   background: '#f0f0f0',
 });
 
-const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
+const DefaultTemplate: FC<Props> = ({ children, title }): JSX.Element => {
   const [searchValue, setSearchValue] = useState('');
   const debounedSearchValue = useDebounce(searchValue, 300);
 
@@ -31,7 +33,9 @@ const DefaultTemplate: FC<Props> = ({ children }): JSX.Element => {
         <title>Pokemon</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header>
+        <Title as={'h5'}>{title}</Title>
+      </Header>
       <Container>
         <SearchBar
           setSearchText={handleSetSearchValue}
