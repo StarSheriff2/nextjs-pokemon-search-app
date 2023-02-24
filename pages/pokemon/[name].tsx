@@ -34,7 +34,7 @@ const PokemonDetails: FC = (): JSX.Element => {
   if (pokemonIsError) {
     return (
       <Container page="spinner">
-        <Title>We couldn't find your pokemon </Title>
+        <Title>We couldn&apos;t find your pokemon </Title>
         <div
           style={{ textAlign: 'center', margin: '0 auto' }}
           role="img"
