@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { PokemonData } from '@/pages/hooks/types';
+import { PokemonData } from '@/lib/types';
 import PokemonCardDetails from '@/components/UI/organisms/PokemonCardDetails';
 import DetailsTemplate from '@/components/templates/DetailsTemplate';
 

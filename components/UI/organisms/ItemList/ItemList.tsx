@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { InfiniteData } from '@tanstack/react-query';
 import Card from '../Card';
-import PokemonList, { GenericItem } from '@/pages/hooks/types';
+import PokemonList, { GenericItem } from '@/lib/types';
 import { styled } from '@/stitches.config';
 
 interface Props {

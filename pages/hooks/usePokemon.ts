@@ -3,7 +3,7 @@ import pokemonImgUrl from '@/utils/generatePokemonImageUrl';
 import mapListResults from '@/utils/mapPokemonPaginatedResults';
 import { useQuery, useInfiniteQuery } from '@tanstack/react-query';
 import api from '../api/pokemon';
-import PokemonList, { GenericItem, PokemonData, Result } from './types';
+import PokemonList, { GenericItem, PokemonData, Result } from '../../lib/types';
 
 const FETCH_LIMIT = 9;
 
@@ -44,7 +44,7 @@ export const useSearchPokemon = (query: string) => {
   });
 };
 
-export const useFindPokemonSuggestions = (slug: string) => {
+const useFindPokemonSuggestions = (slug: string) => {
   return useQuery(
     ['findPokemonSuggestions', slug],
     () => findPokemonSuggestions(slug),
@@ -53,3 +53,5 @@ export const useFindPokemonSuggestions = (slug: string) => {
     }
   );
 };
+
+export default useFindPokemonSuggestions;

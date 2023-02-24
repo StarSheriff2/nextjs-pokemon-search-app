@@ -1,6 +1,6 @@
 import DefaultTemplate from '@/components/templates/DefaultTemplate';
 import ItemList from '@/components/UI/organisms/ItemList';
-import PokemonList from '@/pages/hooks/types';
+import PokemonList from '@/lib/types';
 import {
   IMG_ALT_KEY,
   IMG_URL_KEY,

@@ -1,4 +1,4 @@
-import Pokemon from '@/pages/hooks/types';
+import Pokemon from '@/lib/types';
 import { StateCreator } from 'zustand';
 import IPokemon from '../types/IPokemon.type';
 

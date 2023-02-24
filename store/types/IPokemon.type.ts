@@ -1,4 +1,4 @@
-import Pokemon from '@/pages/hooks/types';
+import Pokemon from '@/lib/types';
 
 interface IPokemon {
   data: Pokemon | null;

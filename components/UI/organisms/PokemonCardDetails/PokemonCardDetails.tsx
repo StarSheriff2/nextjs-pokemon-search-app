@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { styled } from '@/stitches.config';
-import { PokemonData } from '@/pages/hooks/types';
+import { PokemonData } from '@/lib/types';
 import ResponsiveImage from '../../atoms/ResponsiveImage';
 import Text from '../../atoms/Text';
 

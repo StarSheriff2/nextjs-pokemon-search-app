@@ -1,4 +1,4 @@
-import { GenericItem, Result } from '@/pages/hooks/types';
+import { GenericItem, Result } from '@/lib/types';
 import pokemonImgUrl from './generatePokemonImageUrl';
 
 export const IMG_URL_KEY = 'imgUrl';
