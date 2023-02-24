@@ -1,48 +1,50 @@
 import React, { FC } from 'react';
 import CardBody from '../../molecules/CardBody';
 import ResponsiveImage from '../../atoms/ResponsiveImage';
-import { styled } from '@stitches/react';
+import { styled } from '@/stitches.config';
 
 interface Props {
   imgSrc: string;
   imgAlt: string;
-  imgHeight: string;
-  cardHeight: string;
-  cardWidth: string;
+  size: 'large';
   title: string;
   linkPath: string;
 }
 
 const StyledCard = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  padding: 0,
+  defaultVariants: {
+    size: 'large',
+  },
+  variants: {
+    size: {
+      large: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        padding: 0,
+        height: '$sizes$cardHeight',
+        width: '$sizes$cardWidth',
+        '& div': {
+          height: '$cardImgHeight',
+        },
+        '& div img': {
+          padding: '$4',
+        },
+      },
+    },
+  },
 });
 
 const Card: FC<Props> = ({
   imgSrc,
   imgAlt,
-  imgHeight,
-  cardHeight,
-  cardWidth,
   title,
   linkPath,
+  size,
 }): JSX.Element => {
   return (
-    <StyledCard
-      css={{
-        height: cardHeight,
-        width: cardWidth,
-      }}
-    >
-      <ResponsiveImage
-        src={imgSrc}
-        alt={imgAlt}
-        css={{
-          height: imgHeight,
-        }}
-      />
+    <StyledCard size={size}>
+      <ResponsiveImage src={imgSrc} alt={imgAlt} />
       <CardBody title={title} linkText="Details →" linkPath={linkPath} />
     </StyledCard>
   );

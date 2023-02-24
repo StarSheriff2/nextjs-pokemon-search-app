@@ -1,7 +1,6 @@
-import { PokemonData } from '@/pages/hooks/types';
-import { styled, css } from '@/stitches.config';
-import { $$ThemeValue } from '@stitches/react';
 import { FC } from 'react';
+import { styled } from '@/stitches.config';
+import { PokemonData } from '@/pages/hooks/types';
 import ResponsiveImage from '../../atoms/ResponsiveImage';
 
 interface Props {
@@ -9,17 +8,33 @@ interface Props {
 }
 
 const DetailsCard = styled('div', {
-  height: '450px',
-  maxWidth: '300px',
-  margin: '0 auto',
-  background: '$mango',
-  borderRadius: '$1 $1 $1 $1',
-});
-
-const PokemonInfo = styled('ul', {
-  padding: '$4',
-  '& li': {
-    padding: '$1',
+  defaultVariants: {
+    size: 'large',
+  },
+  variants: {
+    size: {
+      large: {
+        height: '450px',
+        maxWidth: '300px',
+        margin: '0 auto',
+        background: '$mango',
+        borderRadius: '$1 $1 $1 $1',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        padding: 0,
+        '& div': {
+          backgroundColor: '$seafoamMid',
+          height: '200px',
+        },
+      },
+    },
+  },
+  '& ul': {
+    padding: '$4',
+    '& li': {
+      padding: '$1',
+    },
   },
 });
 
@@ -29,12 +44,8 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
       <ResponsiveImage
         src={pokemon.sprites?.other['official-artwork']?.front_default}
         alt={`${pokemon.name} artwork`}
-        css={{
-          backgroundColor: '$seafoamMid',
-          height: '200px',
-        }}
       />
-      <PokemonInfo>
+      <ul>
         <li>
           <strong>Name:</strong>{' '}
           {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
@@ -72,7 +83,7 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
             </a>
           </p>
         </li>
-      </PokemonInfo>
+      </ul>
     </DetailsCard>
   );
 };

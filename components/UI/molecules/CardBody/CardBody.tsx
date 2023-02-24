@@ -25,6 +25,11 @@ const StyledCardBody = styled('div', {
   flex: 'none',
   order: 1,
   flexGrow: 2,
+
+  '& div:last-child': {
+    display: 'flex',
+    alignItems: 'flex-end',
+  },
 });
 
 const CardBody: FC<Props> = ({ title, description, linkText, linkPath }) => {

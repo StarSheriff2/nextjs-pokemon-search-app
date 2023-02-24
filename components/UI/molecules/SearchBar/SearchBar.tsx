@@ -1,10 +1,10 @@
 import { FC, useRef, useState } from 'react';
 import Input from '../../atoms/Input';
 import Image from 'next/image';
-import { styled } from '@stitches/react';
 import Button from '../../atoms/Button';
 import SearchResults from '../../atoms/SearchResults';
 import useOnClickOutside from '@/pages/hooks/useOnClickOutSide';
+import { styled } from '@/stitches.config';
 
 interface Props {
   searchText: string;
@@ -13,20 +13,20 @@ interface Props {
 }
 
 const StyledSearchBarWrapper = styled('div', {
-  margin: '0 1rem',
-  marginTop: 'calc(213px - 92px)',
+  margin: '0 $4',
+  marginTop: 'calc(213px - $sizes$header)',
   position: 'relative',
   maxWidth: '629px',
-  borderRadius: '8px',
-  background: '#ffffff',
+  borderRadius: '$1',
+  background: '$grey0',
   '& div': {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingLeft: '1rem',
-    gap: '12px',
-    width: '100%',
-    borderRadius: '8px',
+    paddingLeft: '$4',
+    gap: '$3',
+    width: '$w100',
+    borderRadius: '$1',
   },
 });
 

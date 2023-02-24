@@ -1,12 +1,9 @@
 import React, { FC } from 'react';
-import { styled } from '@stitches/react';
+import { InfiniteData } from '@tanstack/react-query';
 import Card from '../Card';
 import PokemonList, { GenericItem } from '@/pages/hooks/types';
-import { InfiniteData } from '@tanstack/react-query';
+import { styled } from '@/stitches.config';
 
-const CARD_WIDTH = '320px';
-const CARD_HEIGHT = '360px';
-const IMG_HEIGHT = '167px';
 interface Props {
   list: InfiniteData<PokemonList>;
   titleKey: keyof GenericItem;
@@ -16,12 +13,12 @@ interface Props {
 }
 
 const GridContainer = styled('div', {
-  width: '100%',
+  width: '$w100',
   display: 'grid',
-  gridTemplateColumns: `repeat(auto-fit, minmax(${CARD_WIDTH}, 1fr))`,
-  gap: '2rem',
+  gridTemplateColumns: `repeat(auto-fit, minmax($cardWidth, 1fr))`,
+  gap: '$6',
   justifyItems: 'center',
-  padding: '0 1rem',
+  padding: '0 $4',
 });
 
 const ItemList: FC<Props> = ({
@@ -39,10 +36,8 @@ const ItemList: FC<Props> = ({
       {flattenedData.map((item) => (
         <Card
           key={item[titleKey]}
-          cardHeight={CARD_HEIGHT}
-          cardWidth={CARD_WIDTH}
+          size={'large'}
           imgSrc={item[imgSrcKey]}
-          imgHeight={IMG_HEIGHT}
           imgAlt={item[imgAltKey]}
           title={item[titleKey]}
           linkPath={item[linkPathKey]}

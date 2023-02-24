@@ -5,7 +5,6 @@ import { CSS } from '@stitches/react';
 
 interface Props {
   src: string;
-  css: CSS<{}>;
   alt?: string;
 }
 
@@ -21,13 +20,9 @@ const StyledImage = styled(Image, {
   background: 'transparent',
 });
 
-const ResponsiveImage: FC<Props> = ({ src, alt = '', css }) => {
+const ResponsiveImage: FC<Props> = ({ src, alt = '' }) => {
   return (
-    <ImageWrapper
-      css={{
-        ...css,
-      }}
-    >
+    <ImageWrapper>
       <StyledImage src={src} alt={alt} fill loading="lazy" />
     </ImageWrapper>
   );

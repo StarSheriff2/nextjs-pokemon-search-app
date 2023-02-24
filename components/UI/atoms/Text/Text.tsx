@@ -25,7 +25,7 @@ const Text = styled('p', {
         fontSize: '$2',
         fontWeight: '$2',
         letterSpacing: 0,
-        lineHeight: 0,
+        lineHeight: '$6',
       },
       textSmallSemibold: {
         fontSize: '$2',
