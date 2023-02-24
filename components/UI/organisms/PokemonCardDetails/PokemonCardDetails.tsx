@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { styled } from '@/stitches.config';
 import { PokemonData } from '@/pages/hooks/types';
 import ResponsiveImage from '../../atoms/ResponsiveImage';
+import Text from '../../atoms/Text';
 
 interface Props {
   pokemon: PokemonData;
@@ -14,8 +15,8 @@ const DetailsCard = styled('div', {
   variants: {
     size: {
       large: {
-        height: '450px',
-        maxWidth: '300px',
+        height: '600px',
+        maxWidth: '400px',
         margin: '0 auto',
         background: '$mango',
         borderRadius: '$1 $1 $1 $1',
@@ -23,9 +24,17 @@ const DetailsCard = styled('div', {
         flexDirection: 'column',
         alignItems: 'flex-start',
         padding: 0,
-        '& div': {
+        '& div:first-child': {
           backgroundColor: '$seafoamMid',
-          height: '200px',
+          height: '300px',
+        },
+        '& div:last-child': {
+          width: '$w100',
+          flexGrow: '1',
+          paddingBottom: '$6',
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'center',
         },
       },
     },
@@ -72,18 +81,24 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
             .map((move) => move.move.name)
             .join(', ')}
         </li>
-        <li>
-          <p>
-            <a
-              href={`https://bulbapedia.bulbagarden.net/wiki/${pokemon.name} `}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              More details at bulbapedia
-            </a>
-          </p>
-        </li>
       </ul>
+      <div>
+        <Text
+          textStyle={'textLead'}
+          css={{
+            color: '$infoDark',
+            textAlign: 'center',
+          }}
+        >
+          <a
+            href={`https://bulbapedia.bulbagarden.net/wiki/${pokemon.name} `}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            More details at bulbapedia →
+          </a>
+        </Text>
+      </div>
     </DetailsCard>
   );
 };
