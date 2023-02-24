@@ -1,44 +1,34 @@
-import { styled } from '@stitches/react';
 import React, { FC } from 'react';
 import Image from 'next/image';
+import { styled } from '@/stitches.config';
+import { CSS } from '@stitches/react';
 
 interface Props {
   src: string;
-  bgd?: string;
+  css: CSS<{}>;
   alt?: string;
-  imageWrapperHeight: string;
 }
 
 const ImageWrapper = styled('div', {
   position: 'relative',
-  width: '100%',
-  borderRadius: '8px 8px 0px 0px',
+  width: '$w100',
+  borderRadius: '$1 $1 0px 0px',
+  backgroundColor: '$w100',
 });
 
-const ResponsiveImage: FC<Props> = ({
-  src,
-  alt = '',
-  bgd = 'white',
-  imageWrapperHeight,
-}) => {
+const StyledImage = styled(Image, {
+  objectFit: 'contain',
+  background: 'transparent',
+});
+
+const ResponsiveImage: FC<Props> = ({ src, alt = '', css }) => {
   return (
     <ImageWrapper
       css={{
-        height: imageWrapperHeight,
-        background: bgd,
+        ...css,
       }}
     >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        style={{
-          objectFit: 'contain',
-          background: 'transparent',
-          padding: '1rem',
-        }}
-        loading="lazy"
-      />
+      <StyledImage src={src} alt={alt} fill loading="lazy" />
     </ImageWrapper>
   );
 };

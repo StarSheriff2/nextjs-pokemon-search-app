@@ -1,5 +1,6 @@
 import { PokemonData } from '@/pages/hooks/types';
-import { styled } from '@stitches/react';
+import { styled, css } from '@/stitches.config';
+import { $$ThemeValue } from '@stitches/react';
 import { FC } from 'react';
 import ResponsiveImage from '../../atoms/ResponsiveImage';
 
@@ -11,14 +12,14 @@ const DetailsCard = styled('div', {
   height: '450px',
   maxWidth: '300px',
   margin: '0 auto',
-  background: 'lightgreen',
-  borderRadius: '8px 8px 8px 8px',
+  background: '$mango',
+  borderRadius: '$1 $1 $1 $1',
 });
 
 const PokemonInfo = styled('ul', {
-  padding: '1rem',
+  padding: '$4',
   '& li': {
-    padding: '0.1rem',
+    padding: '$1',
   },
 });
 
@@ -28,8 +29,10 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
       <ResponsiveImage
         src={pokemon.sprites?.other['official-artwork']?.front_default}
         alt={`${pokemon.name} artwork`}
-        imageWrapperHeight="200px"
-        bgd="orange"
+        css={{
+          backgroundColor: '$seafoamMid',
+          height: '200px',
+        }}
       />
       <PokemonInfo>
         <li>

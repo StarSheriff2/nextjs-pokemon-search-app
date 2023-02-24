@@ -5,7 +5,7 @@ import SearchBar from '@/components/UI/molecules/SearchBar';
 import useDebounce from '@/pages/hooks/useDebounce';
 import { useFindPokemonSuggestions } from '@/pages/hooks/usePokemon';
 import Container from '@/components/UI/atoms/Container';
-import { styled } from '@stitches/react';
+import { styled } from '@/stitches.config';
 
 interface Props {
   children?: React.ReactNode;

@@ -31,7 +31,9 @@ const CardBody: FC<Props> = ({ title, description, linkText, linkPath }) => {
   return (
     <StyledCardBody>
       <div>
-        <Title>{title}</Title>
+        <Title as="h6" css={{ color: '$b20' }}>
+          {title}
+        </Title>
         {description && <Text>{description}</Text>}
       </div>
       <div>

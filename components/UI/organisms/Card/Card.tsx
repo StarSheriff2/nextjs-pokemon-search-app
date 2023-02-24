@@ -17,7 +17,7 @@ const StyledCard = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
-  padding: '0px',
+  padding: 0,
 });
 
 const Card: FC<Props> = ({
@@ -38,9 +38,10 @@ const Card: FC<Props> = ({
     >
       <ResponsiveImage
         src={imgSrc}
-        imageWrapperHeight={imgHeight}
         alt={imgAlt}
-        bgd="white"
+        css={{
+          height: imgHeight,
+        }}
       />
       <CardBody title={title} linkText="Details →" linkPath={linkPath} />
     </StyledCard>

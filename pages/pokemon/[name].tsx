@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 import { searchPokemon, useSearchPokemon } from '@/pages/hooks/usePokemon';
 import PokemonDetailsPage from '@/components/pages/PokemonDetails';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
-import Container from '@/components/UI/atoms/Container';
 import MyBeatLoader from '@/components/UI/molecules/BeatLoader';
 import Title from '@/components/UI/atoms/Title';
+import Container from '@/components/UI/atoms/Container';
 
 const PokemonDetails: FC = (): JSX.Element => {
   const router = useRouter();

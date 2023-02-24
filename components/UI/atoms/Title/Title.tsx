@@ -1,19 +1,5 @@
-import { FC } from 'react';
+import { styled } from '@/stitches.config';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const Title: FC<Props> = ({ children }) => {
-  return (
-    <h2
-      style={{
-        color: '#143c52',
-      }}
-    >
-      {children}
-    </h2>
-  );
-};
+const Title = styled('h1', {});
 
 export default Title;

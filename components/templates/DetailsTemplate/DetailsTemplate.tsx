@@ -25,7 +25,13 @@ const DetailsTemplate: FC<Props> = ({
       <Header />
       <Container>
         <Link href={backPath}>
-          <Text>
+          <Text
+            textStyle={'textParagraph'}
+            css={{
+              color: '$seafoamDark',
+              marginTop: '$4',
+            }}
+          >
             <strong>{backPathText}</strong>
           </Text>
         </Link>

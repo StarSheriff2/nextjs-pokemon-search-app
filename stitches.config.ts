@@ -2,13 +2,24 @@ import { Quicksand } from '@next/font/google';
 import { createStitches } from '@stitches/react';
 
 const quicksand = Quicksand({
-  weight: ['400', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   style: 'normal',
 });
 
-export const { styled, getCssText, css } = createStitches({
+export const { styled, getCssText, css, globalCss } = createStitches({
   theme: {
     colors: {
+      grey0: '#ffffff',
+      grey100BackgroundColour: '#f7f7f7',
+      grey200: '#eaeaea',
+      grey300: '#dedede',
+      grey400: '#bebebe',
+      grey500MutedColour: '#a9a9a9',
+      grey600: '#7d7d7d',
+      grey700: '#686868',
+      grey800: '#434343',
+      grey900TextColour: '#1f1f1f',
+      grey1000: '#000000',
       oceanPrimary: '#004368',
       oceanDark: '#004368',
       oceanMid: '#408ab6',
@@ -73,24 +84,41 @@ export const { styled, getCssText, css } = createStitches({
       3: '16px',
       4: '18px',
       5: '24px',
-      6: '32px',
+      6: '28px',
+      7: '32px',
+      8: '40px',
     },
     fonts: {
       quicksand: quicksand.style.fontFamily,
     },
     fontWeights: {
       1: '400',
-      2: '600',
-      3: '700',
+      2: '500',
+      3: '600',
+      4: '700',
     },
     lineHeights: {},
     letterSpacings: {
       1: '-0.02em',
     },
-    sizes: {},
-    borderWidths: {},
+    sizes: {
+      1024: '1024',
+      vw100: '100vw',
+      cardWidth: '320px',
+      cardHeight: '360px',
+      imgHeight: '167px',
+      w100: '100%',
+    },
+    borderWidths: {
+      1: '12px',
+      2: '14px',
+      3: '16px',
+    },
     borderStyles: {},
-    radii: {},
+    radii: {
+      1: '8px',
+      2: '16px',
+    },
     shadows: {},
     zIndices: {},
     transitions: {},
