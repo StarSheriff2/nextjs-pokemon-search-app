@@ -26,13 +26,7 @@ const StyledCard = styled('div', {
   },
 });
 
-const Card: FC<Props> = ({
-  imgSrc,
-  imgAlt,
-  title,
-  linkPath,
-  size,
-}): JSX.Element => {
+const Card: FC<Props> = ({ imgSrc, imgAlt, title, linkPath }): JSX.Element => {
   return (
     <StyledCard>
       <ResponsiveImage
