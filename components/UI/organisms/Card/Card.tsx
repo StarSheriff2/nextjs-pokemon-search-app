@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import CardBody from '../../molecules/CardBody';
 import ResponsiveImage from '../../atoms/ResponsiveImage';
-import { styled } from '@/stitches.config';
+import { styled, theme } from '@/stitches.config';
 
 interface Props {
   imgSrc: string;
@@ -44,7 +44,11 @@ const Card: FC<Props> = ({
 }): JSX.Element => {
   return (
     <StyledCard size={size}>
-      <ResponsiveImage src={imgSrc} alt={imgAlt} fill={true} />
+      <ResponsiveImage
+        src={imgSrc}
+        alt={imgAlt}
+        imageBpWidths={[theme.sizes.cardImgWidthBp2.value]}
+      />
       <CardBody title={title} linkText="Details →" linkPath={linkPath} />
     </StyledCard>
   );

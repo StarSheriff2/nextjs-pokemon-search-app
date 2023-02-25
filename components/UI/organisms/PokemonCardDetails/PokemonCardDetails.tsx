@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { styled } from '@/stitches.config';
+import { styled, theme } from '@/stitches.config';
 import { PokemonData } from '@/lib/types';
 import ResponsiveImage from '../../atoms/ResponsiveImage';
 import Text from '../../atoms/Text';
@@ -53,6 +53,7 @@ const PokemonCardDetails: FC<Props> = ({ pokemon }): JSX.Element => {
       <ResponsiveImage
         src={pokemon.sprites?.other['official-artwork']?.front_default}
         alt={`${pokemon.name} artwork`}
+        imageBpWidths={[theme.sizes.cardImgWidthBp2.value]}
       />
       <ul>
         <li>

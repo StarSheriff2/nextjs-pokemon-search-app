@@ -28,21 +28,20 @@ const ItemList: FC<Props> = ({
   imgAltKey,
   linkPathKey,
 }) => {
-  const flattenedData: GenericItem[] =
-    list?.pages.flatMap((page) => page.results as GenericItem[]) || [];
-
   return (
     <GridContainer>
-      {flattenedData.map((item) => (
-        <Card
-          key={item[titleKey]}
-          size={'large'}
-          imgSrc={item[imgSrcKey]}
-          imgAlt={item[imgAltKey]}
-          title={item[titleKey]}
-          linkPath={item[linkPathKey]}
-        />
-      ))}
+      {list.pages.map((page) =>
+        (page.results as GenericItem[]).map((item) => (
+          <Card
+            key={item[titleKey]}
+            size={'large'}
+            imgSrc={item[imgSrcKey]}
+            imgAlt={item[imgAltKey]}
+            title={item[titleKey]}
+            linkPath={item[linkPathKey]}
+          />
+        ))
+      )}
     </GridContainer>
   );
 };

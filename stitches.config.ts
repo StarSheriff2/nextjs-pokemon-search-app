@@ -6,7 +6,7 @@ const quicksand = Quicksand({
   style: 'normal',
 });
 
-export const { styled, getCssText, css, globalCss } = createStitches({
+export const { styled, getCssText, css, globalCss, theme } = createStitches({
   theme: {
     colors: {
       grey0: '#ffffff',
@@ -119,6 +119,8 @@ export const { styled, getCssText, css, globalCss } = createStitches({
       cardWidth: '320px',
       cardHeight: '360px',
       cardImgHeight: '167px',
+      cardImgWidthBp1: 300,
+      cardImgWidthBp2: 400,
       w100: '100%',
       header: '92px',
     },
