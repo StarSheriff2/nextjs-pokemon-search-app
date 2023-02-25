@@ -116,7 +116,9 @@ export const { styled, getCssText, css, globalCss, theme } = createStitches({
       vh100: '100vh',
       detailsCardHeight: '450px',
       detailsCardWidth: '300px',
-      cardWidth: '320px',
+      cardWidthBp1: '250px',
+      cardWidthBp2: '400px',
+      cardWidthBp3: '320px',
       cardHeight: '360px',
       cardImgHeight: '167px',
       cardImgWidthBp1: 300,
@@ -136,5 +138,10 @@ export const { styled, getCssText, css, globalCss, theme } = createStitches({
     shadows: {},
     zIndices: {},
     transitions: {},
+  },
+  media: {
+    bp1: '(min-width: 640px)',
+    bp2: '(min-width: 768px)',
+    bp3: '(min-width: 1024px)',
   },
 });

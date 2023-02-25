@@ -15,9 +15,10 @@ interface Props {
 const GridContainer = styled('div', {
   width: '$w100',
   display: 'grid',
-  gridTemplateColumns: `repeat(auto-fit, minmax($cardWidth, 1fr))`,
+  gridTemplateColumns: `repeat(auto-fit, minmax($cardWidthBp1, $cardWidthBp3))`,
   gap: '$6',
   justifyItems: 'center',
+  justifyContent: 'center',
   padding: '0 $4',
 });
 

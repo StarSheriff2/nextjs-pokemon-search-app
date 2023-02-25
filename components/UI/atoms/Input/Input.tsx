@@ -1,10 +1,4 @@
 import { styled } from '@/stitches.config';
-import { Quicksand } from '@next/font/google';
-
-const quicksand = Quicksand({
-  weight: ['400', '600', '700'],
-  style: 'normal',
-});
 
 const Input = styled('input', {
   background: '$w100',

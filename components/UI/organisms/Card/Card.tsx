@@ -12,26 +12,17 @@ interface Props {
 }
 
 const StyledCard = styled('div', {
-  defaultVariants: {
-    size: 'large',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  padding: 0,
+  width: '$w100',
+  height: '$cardHeight',
+  '& div': {
+    height: '$cardImgHeight',
   },
-  variants: {
-    size: {
-      large: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        padding: 0,
-        height: '$sizes$cardHeight',
-        width: '$sizes$cardWidth',
-        '& div': {
-          height: '$cardImgHeight',
-        },
-        '& div img': {
-          padding: '$4',
-        },
-      },
-    },
+  '& div img': {
+    padding: '$4',
   },
 });
 
@@ -43,7 +34,7 @@ const Card: FC<Props> = ({
   size,
 }): JSX.Element => {
   return (
-    <StyledCard size={size}>
+    <StyledCard>
       <ResponsiveImage
         src={imgSrc}
         alt={imgAlt}
