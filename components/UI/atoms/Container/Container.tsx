@@ -24,6 +24,7 @@ const Container = styled('div', {
       template: {
         maxWidth: 'calc($1024 + $fontSizes$7)',
         minHeight: 'calc($vh100 - 92px - 213px)',
+        minWidth: '300px',
       },
       spinner: {
         maxWidth: '$vw100',
