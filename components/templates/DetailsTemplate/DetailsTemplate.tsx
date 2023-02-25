@@ -28,7 +28,7 @@ const DetailsTemplate: FC<Props> = ({
       <Header>
         <Title as={'h5'}>{title}</Title>
       </Header>
-      <Container>
+      <Container padding={'p4'}>
         <Link href={backPath}>
           <Text
             textStyle={'textParagraph'}

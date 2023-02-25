@@ -6,6 +6,20 @@ const Container = styled('div', {
   },
   margin: '0 auto',
   variants: {
+    padding: {
+      p1: {
+        padding: '$space$1',
+      },
+      p2: {
+        padding: '$space$2',
+      },
+      p3: {
+        padding: '$space$3',
+      },
+      p4: {
+        padding: '$space$4',
+      },
+    },
     page: {
       template: {
         maxWidth: 'calc($1024 + $fontSizes$7)',
