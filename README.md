@@ -67,7 +67,7 @@ Global style and typography with stitches.dev for - consistent branding and desi
 
 ### Live Demo
 
-![Vercel](https://nextjs-pokemon-search-app.vercel.app)
+![Vercel](https://vercelbadge.vercel.app/api/StarSheriff2/nextjs-pokemon-search-app)
 
 - Deployed to Vercel: [Live Demo](https://nextjs-pokemon-search-app.vercel.app)
 
