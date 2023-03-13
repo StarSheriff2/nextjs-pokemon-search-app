@@ -15,7 +15,7 @@ interface Props {
 
 const HomePage: FC<Props> = ({ pokemonList }): JSX.Element => {
   return (
-    <DefaultTemplate title="Bannano Frontend Challenge">
+    <DefaultTemplate title="NextJS Pokemon Search App">
       <ItemList
         list={pokemonList}
         titleKey="name"
