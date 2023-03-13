@@ -1,5 +1,5 @@
 <div align="center">
-<h1><a href="nextjs-pokemon-search-app.vercel.app" target="_blank">NextJS Pokemon Search App</a></h1>
+<h1><a href="https://nextjs-pokemon-search-app.vercel.app" target="_blank">NextJS Pokemon Search App</a></h1>
 </div>
 
 <div align="center">
@@ -67,7 +67,7 @@ Global style and typography with stitches.dev for - consistent branding and desi
 
 ### Live Demo
 
-![Vercel](https://vercelbadge.vercel.app/api/StarSheriff2/Pokemon-API)
+![Vercel](https://nextjs-pokemon-search-app.vercel.app)
 
 - Deployed to Vercel: [Live Demo](https://nextjs-pokemon-search-app.vercel.app)
 
