@@ -51,7 +51,7 @@ Overall, this app provides a seamless and intuitive experience for users to brow
 - Debounce for search feature to improve usability
 - Infinite scroll to load more results
 - Responsive design for seamless use on any device
-Global style and typography with stitches.dev for - consistent branding and design across the app
+- Global style and typography with stitches.dev for consistent branding and design across the app
 
 ### Technologies Used
 
