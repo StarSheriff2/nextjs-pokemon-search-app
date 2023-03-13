@@ -22,11 +22,9 @@ const StyledSearchBarWrapper = styled('div', {
   background: '$grey0',
   '& div': {
     display: 'flex',
-    // flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: '$4',
     gap: '$3',
-    // width: '$w100',
     borderRadius: '$1',
   },
 });
