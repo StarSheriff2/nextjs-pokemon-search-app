@@ -23,12 +23,12 @@
 <p align="center">This is a <strong>Next.js</strong> frontend web app that consumes the Pokemon API at <a href="https://pokeapi.co/" target="_blank">https://pokeapi.co</a>. It has been built using stitches.dev, react query, zustand, and TypeScript. The app follows the atomic design pattern principles for the UI development.</p>
 
 <br>
-
 <div align="center">
-  <img width="80%" alt="Screenshot 2023-02-24 at 08 56 53" src="https://user-images.githubusercontent.com/61250665/221210550-5ee2aaf5-3880-46e0-a147-c5c4439c9f21.png">
-  <img width="80%" alt="Screenshot 2023-02-24 at 08 57 09" src="https://user-images.githubusercontent.com/61250665/221210546-1780b80c-c5f4-442f-b21b-4272a4eccdd0.png">
-  <img width="80%" alt="Screenshot 2023-02-24 at 08 57 34" src="https://user-images.githubusercontent.com/61250665/221210537-8e6719eb-c1a8-441a-8041-dae63b8bae86.png">
-  <img width="50%" alt="Screenshot 2023-03-13 at 15 04 06" src="https://user-images.githubusercontent.com/61250665/224832041-7f711720-3fc0-4012-8386-a8e1c363c7b2.png">
+  <img width="80%" alt="App screenshot" src="https://user-images.githubusercontent.com/61250665/224841071-2c1d47fb-1b4c-43c6-a1bc-12e278d04389.png">
+  <img width="80%" alt="App screenshot" src="https://user-images.githubusercontent.com/61250665/224841067-63cfd0ef-0853-46fa-b48b-1746348d0124.png">
+  <img width="80%" alt="App screenshot" src="https://user-images.githubusercontent.com/61250665/224841066-2289584c-9226-4ba0-9173-188686d5aaed.png">
+  <img width="40%" alt="App screenshot" src="https://user-images.githubusercontent.com/61250665/224841073-8ccb4b4d-86ef-4a29-b4b1-ff967e5755d1.png">
+  <img width="40%" alt="App screenshot" src="https://user-images.githubusercontent.com/61250665/224841059-464ec1ef-2bd0-4274-9cb4-0bc1648a2ed2.png">
 </div>
 
 ## About
@@ -39,7 +39,9 @@ This app follows the ***Atomic Design Pattern***, which breaks down the interfac
 Overall, this app provides a seamless and intuitive experience for users to browse and search for Pokemon data. Its fast performance, responsive design, reusable components, and efficient search and browsing features make it a showcase of the power and flexibility of the Next.js framework.
 
 ### File Structure
-<div align="left"><img width="30%" alt="file structure screenshot" src="./.github/images/file_structure_snap1.png">
+<div align="left">
+<img width="60%" alt="File structure screenshot" src="https://user-images.githubusercontent.com/61250665/224842226-42b190ff-d535-4949-a712-622b5a1249c0.png">
+<img width="60%" alt="File structure screenshot" src="https://user-images.githubusercontent.com/61250665/224842221-33edd53b-deda-4ebe-a2dd-14c9613421a7.png">
 </div>
 
 ### Highlights
@@ -119,4 +121,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-<!-- This project is [MIT](https://github.com/StarSheriff2/Weather-App-Calendar---frontend/blob/main/LICENSE) licensed. -->
+This project is [MIT](https://github.com/StarSheriff2/nextjs-pokemon-search-app/blob/readme/LICENSE) licensed.
