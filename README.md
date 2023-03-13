@@ -1,5 +1,5 @@
 <div align="center">
-<h1><a href="https://pokemon-api-g1ef-git-my-implementation-starsheriff2.vercel.app/" target="_blank">Next.js Frontend Web App for Pokemon API</a></h1>
+<h1><a href="https://pokemon-api-g1ef-git-my-implementation-starsheriff2.vercel.app/" target="_blank">NextJS Pokemon Search App</a></h1>
 </div>
 
 <div align="center">

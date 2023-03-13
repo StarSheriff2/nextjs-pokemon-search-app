@@ -12,7 +12,7 @@ const PokemonDetailsPage: FC<Props> = ({ pokemon }): JSX.Element => {
     <DetailsTemplate
       backPath="/"
       backPathText="&lt; Back"
-      title="Bannano Frontend Challenge"
+      title="NextJS Pokemon Search App"
     >
       <PokemonCardDetails pokemon={pokemon} />
     </DetailsTemplate>
